@@ -1,0 +1,7 @@
+include "PositionOffsetLLV.fbs";
+
+namespace MECData;
+
+table DF_RoadPoint {
+    posOffset:DF_PositionOffsetLLV(required);	               //Position offset to the reference position
+}

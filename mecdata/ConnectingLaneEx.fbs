@@ -1,0 +1,16 @@
+include "RoadPoint.fbs";
+
+namespace MECData;
+
+table DF_ConnectingLaneEx {
+    target_section: uint8;                  // INTEGER (0..63)
+    target_lane: int8;                      // lane reference id of the connecting lane
+    connectingLaneWidth: ushort;            // INTEGER (0..32767) -- units of 1 cm
+                                            // indicating the width of the real or virtual connecting lane
+    connectingLanePoints: [DF_RoadPoint];   // indicating the position of the real or virtual connecting lane
+    isolatedConnectingLane: bool = false;   // A real isolated connecting lane is seperated from any other lanes
+                                            // usually exists in right turning
+    ext_id: string;                         // Extented ID as stored in center database
+    target_section_ext_id: string;          // Extended ID of target section as stored in center database
+    target_lane_ext_id: string;             // Extended ID of target lane as stored in center database
+}

@@ -1,0 +1,16 @@
+include "Position3D.fbs";
+include "ParticipantData.fbs";
+include "DebugTimeRecords.fbs";
+
+namespace MECData;
+
+table MSG_RoadsideSafetyMessage {
+    id: uint16;                                         // module id
+    refPos: DF_Position3D(required);                              //Reference position of this Msg_RSM message
+    participants: [DF_ParticipantData](required);                 //All or part of the participants,detected by RSU
+    time_records: DF_DebugTimeRecords;
+    msg_id: int64;                                      // unique id for this message
+    rsu_id: [uint8];                                    // RSU id
+}
+
+root_type MSG_RoadsideSafetyMessage;

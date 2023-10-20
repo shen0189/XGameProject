@@ -1,0 +1,8 @@
+namespace MECData;
+
+table DF_PositionLLmD64b {
+                                                    //a full 32b Lat/Lon range
+                                                    //In LSB units of 0.1 microdegrees
+    lon:int;
+    lat:int;
+}

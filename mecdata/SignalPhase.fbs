@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_SignalPhase { 
+    id:int;                                //signal_head_id
+    phaseStatus:ushort;                
+    nextGreenTime:ushort;                  //s
+}

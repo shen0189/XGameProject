@@ -1,0 +1,12 @@
+namespace MECData;
+
+enum DE_SignalControlMode: uint8 {
+    CYCLIC_FIXED = 0,
+    CYCLIC_COORDINATED = 1,
+    ACTUATED = 2,
+    ADAPTIVE = 3,
+    STEP = 4,
+    AMBER_FLASH = 5,
+    ALL_RED = 6,
+    OFF = 255
+}

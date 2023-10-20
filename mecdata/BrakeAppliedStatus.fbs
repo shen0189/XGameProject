@@ -1,0 +1,15 @@
+namespace MECData;
+
+table DF_BrakeAppliedStatus{
+                                                   //unavailable=0,                                 
+                                                   //When set, the brake applied status is unavailable
+                                                   //leftFront=1,                                   
+                                                   //Left Front Active
+                                                   //leftRear=2,                                    
+                                                   //Left Rear Active
+                                                   //rightFront=3,                                  
+                                                   //Right Front Active
+                                                   //rightRear=4                                    
+                                                   //Right Rear Active
+    wheelBrakes:byte;
+}

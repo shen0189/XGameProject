@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_LocalTimePoint {
+    hh: uint8;
+    mm: uint8;
+    ss: uint8;
+}

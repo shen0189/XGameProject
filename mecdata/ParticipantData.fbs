@@ -1,0 +1,45 @@
+include "PositionOffsetLLV.fbs";
+include "PositionConfidenceSet.fbs";
+include "AccelerationSet4Way.fbs";
+include "VehicleSize.fbs";
+include "MotionConfidenceSet.fbs";
+include "TransmissionState.fbs";
+include "VehicleClassification.fbs";
+include "NodeReferenceID.fbs";
+include "VehicleCharEx.fbs";
+include "ReferPosition.fbs";
+include "BrakeSystemStatus.fbs";
+include "VehicleSafetyExtensions.fbs";
+
+namespace MECData;
+
+table DF_ParticipantData{
+    ptcType: ubyte = 255;                                       // unknown (0), motor (1), non-motor (2), pedestrian (3), rsu (4)
+    ptcId: ushort = 65535;                                      // temporary ID set by RSU,0 is RSU itself,1..255 represent participants detected by RSU
+    source: ubyte = 255;                                        // unknown(0),selfinfo(1),v2x(2),v2x,video(3),microwaveRadar(4),loop(5),lidar(6),integrated(7)
+    id: [ubyte];                                                // OCTET STRING (SIZE(8)) OPTIONAL,
+    plateNo: string;                                            // OCTET STRING (SIZE(4..16)) OPTIONAL,
+    secMark: ushort = 65535;                                    // DSecond,units of milliseconds
+    pos: DF_PositionOffsetLLV(required);
+    posConfidence: DF_PositionConfidenceSet(required);
+    transmission: DF_TransmissionState;
+    speed: ushort = 65535;                                      // INTEGER(0..8191),Units of 0.02 m/s,The value 8191 indicates that,speed is unavailable
+    heading: short = 32767;                                     // LSB of 0.0125 degrees,A range of O to 359.9875 degrees
+    angle: byte;                                                // LSB units of 1.5 degrees, a range of -189 to +189 degrees,+001 = +1.5 deg,-126 = -189 deg and beyond,+126 = +189 deg and beyond,+127 to be used for unavailable
+    motionCfd: DF_MotionConfidenceSet;
+    accelSet: DF_AccelerationSet4Way;
+    size: DF_VehicleSize(required);
+    vehicleClass: DF_VehicleClassification;
+    referPos: DF_ReferPosition;
+    device: [uint16](required);                                 // device id of data source after data fusion
+    moy: uint = 4294967295;                                     // Minute Of TheYear;the value 527040 shall be used for invalid
+    nodeId: DF_NodeReferenceID;                                 // Which intersection the vehicle is located
+    sectionId:  uint8;                                          // Road section
+    laneId: int8;                                               // Which lane the vehicle is located
+    section_ext_id: string;                                     // Extended section id
+    lane_ext_id: string;                                        // Extended lane id
+    vehCharEx: DF_VehicleCharEx;                                // Extra Vehicle Characteristics
+    brakes: DF_BrakeSystemStatus;
+    safetyExt: DF_VehicleSafetyExtensions;
+    msg_id: int64;                                              // unique id for this message
+}

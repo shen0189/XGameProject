@@ -1,0 +1,28 @@
+include "NodeReferenceID.fbs";
+include "Position3D.fbs";
+include "Link.fbs";
+
+// Day II Extensions
+include "LinkEx.fbs";
+include "ProhibitedZone.fbs";
+
+include "PedCrossing.fbs";
+
+namespace MECData;
+
+table DF_Node {
+                                                    // Node can be an intersection, or a road endpoint
+    name:string;                                    // Node name
+    id: DF_NodeReferenceID(required);               // A globally unique value set,consisting of a regionID and node ID assignment
+    refPos: DF_Position3D(required);                // 3D position of the center of this Node.This position is also the reference position for the elements inside
+    inLinks: [DF_Link];                             // all the links enter this Node
+
+    // Day II Extensions
+    inLinks_ex: [DF_LinkEx];
+    prohibitedzone: [DF_ProhibitedZone];
+
+    signal_controlled: bool;                        // if this node is signal controlled
+
+    // Pedestrian crossings
+    ped_crossings: [DF_PedCrossing];
+}

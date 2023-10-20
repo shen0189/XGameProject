@@ -1,0 +1,19 @@
+include "NodeReferenceID.fbs";
+include "SignalWaitingLane.fbs";
+include "ConnectingLaneEx.fbs";
+include "Maneuver.fbs";
+
+namespace MECData;
+
+table DF_ConnectionEx {
+    remoteIntersection: DF_NodeReferenceID;
+    swl: DF_SingleWaitingLane;                  // waiting area set for certain signal phase
+                                                // usually set for left turn
+    connectingLane: [DF_ConnectingLaneEx];      // The index of connecting lane and also
+                                                // the maneuver from the current lane to it
+                                                // When we want to list the allowed lanes of the next link
+                                                // this lane can lead to, we use this entry
+    phaseID: ubyte = 0;
+    turnDirection: DE_Maneuver;
+    ext_id: string;                             // Extented ID as stored in center database
+}

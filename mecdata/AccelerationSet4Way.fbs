@@ -1,0 +1,9 @@
+
+namespace MECData;
+
+table DF_AccelerationSet4Way {
+    lon:short;                                       //Along the Vehicle Longitudinal axis,INTEGER(-2000.. 2001),LSB units are 0.01 m/ s^2,the value 2 000 s hall be used for values greater than 2 000,the value -2 000 shall be used for values less than -2 000,a value of 2 001 shall be used for Unavailable
+    lat:short;                                       //Along the Vehicle Lateral axis,INTEGER(-2000.. 2001),LSB units are 0.01 m/ s^2,the value 2 000 s hall be used for values greater than 2 000,the value -2 000 shall be used
+    vert:byte;                                       //Along the Vehicle Vertical axis,INTEGER(-127..127),LSB units of 0.02 G steps over -2.52 to +2.54 G
+    yaw:short;                                       //YawRate,INTEGER(-32767..32767),LSB units of 0.01 degrees per second (signed)
+}

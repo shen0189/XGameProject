@@ -1,0 +1,11 @@
+include "AccConfidence.fbs";
+include "AngularVConfidence.fbs";
+
+namespace MECData;
+
+table DF_AccSet4WayConfidence {
+    lonAccConfidence:DF_AccConfidence;
+    latAccConfidence:DF_AccConfidence;
+    vertAccConfidence:DF_AccConfidence;
+    yawRateCon:DF_AngularVConfidence;
+}

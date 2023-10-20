@@ -1,0 +1,19 @@
+include "BasicVehicleClass.fbs";
+
+namespace MECData;
+
+table DF_VehicleClassification {
+    classification: DE_BasicVehicleClass = unknownVehicleClass;
+    fuelType:ubyte;                         //INTEGER (0..15)
+                                            //unknownFuel FuelType::= 0 -- Gasoline Powered 
+                                            //gasoline FuelType::= 1 
+                                            //ethanol FuelType::= 2 -- Including blends 
+                                            //diesel FuelType::= 3 -- All types 
+                                            //electric FuelType::= 4 
+                                            //hybrid FuelType::= 5 -- All types 
+                                            //hydrogen FuelType::= 6 
+                                            //natGasLiquid FuelType::= 7 -- Liquefied 
+                                            //natGasComp FuelType::= 8 -- Compressed 
+                                            //propane FuelType::= 9
+
+}

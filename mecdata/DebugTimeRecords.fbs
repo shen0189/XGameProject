@@ -1,0 +1,11 @@
+namespace MECData;
+
+table DE_ArrivalTimeStamp {
+    module_id: uint16;              // arrived at which module
+    timestamp: uint64;              // time of arrival at this module, in ms
+    package_id: string;             // optional package id of this module
+}
+
+table DF_DebugTimeRecords {
+    records: [DE_ArrivalTimeStamp];
+}

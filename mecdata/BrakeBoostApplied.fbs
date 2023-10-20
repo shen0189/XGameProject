@@ -1,0 +1,7 @@
+namespace MECData;
+
+enum DF_BrakeBoostApplied:byte {
+    unavailable = 0,                                //Vehicle not equipped with brake boost or brake boost data is unavailable
+    off = 1,                                        //Vehicle's brake boost is off
+    on = 2                                          //Vehicle's brake boost is on(applied)
+}

@@ -1,0 +1,12 @@
+include "Polygon.fbs";
+
+namespace MECData;
+
+table DF_PedCrossing {
+    ext_id: string;
+    name: string;
+    polygon: DF_Polygon;
+    link_ext_id: string;
+    section_ext_id: string;
+    phase_id: uint8;
+}

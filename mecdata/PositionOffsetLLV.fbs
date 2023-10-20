@@ -1,0 +1,9 @@
+include "PositionOffsetLL.fbs";
+include "VerticalOffset.fbs";
+
+namespace MECData;
+
+table DF_PositionOffsetLLV {
+    offsetLL:DF_PositionOffsetLL(required);                // offset in lon/lat
+    offsetV:DF_VerticalOffset;                             // offset in elevation
+}

@@ -1,0 +1,12 @@
+namespace MECData;
+
+table MSG_VolumeLane {
+    deviceId: uint16;
+    detectAeraId: int32;
+    moy: uint = 4294967295;                                 // Minute Of TheYear;the value 527040 shall be used for invalid
+    secMark: ushort = 65535;                                // DSecond,units of milliseconds
+    cycle: ushort = 65535;                                  // seconds
+    volume: ushort = 65535;                                 // units of 0.1 pcu/h
+}
+
+root_type MSG_VolumeLane;

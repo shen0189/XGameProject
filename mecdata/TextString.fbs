@@ -1,0 +1,5 @@
+namespace MECData;
+
+table DF_TextString {
+    textString:string(required);                                       //IA5String (SIZE(1..512)),
+}

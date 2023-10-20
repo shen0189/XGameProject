@@ -1,0 +1,8 @@
+include "AllowedManeuvers.fbs";
+
+namespace MECData;
+
+table DF_ConnectingLane{
+    lane: ubyte = 255;                                      //Index of the connecting lane
+    maneuver: DF_AllowedManeuvers;
+}

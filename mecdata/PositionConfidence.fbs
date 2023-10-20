@@ -1,0 +1,23 @@
+
+
+namespace MECData;
+
+enum DF_PositionConfidence:byte {
+    
+    unavailable=0,              // B0000 Not Equipped or unavailable  
+    a500m=1,                    // B'0001500mor about 5*10^-3 decimal degrees 
+    a200m=2,                    // B'0010200mor about 2*10^-3 decimal degrees 
+    a100m=3,                    // B'0011100mor about 1*10^-3 decimal degrees 
+    a50m=4,                     // B'010050mor about 5*10^-4 decimal degrees 
+    a20m=5,                     // B'010120mor about 2*10^-4 decimal degrees 
+    a10m=6,                     // B'011010morabout 1*10^-4 decimal degrees 
+    a5m=7,                      // B'01115mor about 5*10^-5 decimal degrees 
+    a2m=8,                      // B'10002mor about 2*10//5 decimal degrees 
+    a1m=9,                      // B'10011mor about 1*10^-5 decimal degrees 
+    a50cm=10,                   // B'10100.50mor about 5*10^-6 decimal degrees 
+    a20cm=11,                   // B'10110.20mor about 2*10^-6 decimal degrees 
+    a10cm=12,                   // B'11000.10mor about 1*10-6 decimal degrees 
+    a5cm=13,                    // B'11010.05mor about 5*10-7 decimal degrees 
+    a2cm=14,                    // B'l110 0.02m or about 2 * 10 ^ -7 decimal degrees 
+    alcm=15                     // B11111 O.Ol m or about 1 * 10 ^ -7 decimal degrees
+}

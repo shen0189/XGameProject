@@ -1,0 +1,10 @@
+namespace MECData;
+
+enum DE_RoadClass: uint8 {
+    UNCLASSIFIED = 0,                       // 未分等
+    EXPRESSWAY = 1,                         // 高速公路、快速路
+    ARTERIAL = 2,                           // 主干路
+    FEEDER = 3,                             // 次干路
+    BRANCH = 4,                             // 支路
+    PRIVATE = 5                             // 内部道路
+}

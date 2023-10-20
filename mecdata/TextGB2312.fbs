@@ -1,0 +1,5 @@
+namespace MECData;
+
+table DF_TextGB2312 {
+    textGB2312:string(required);                                       //OCTET STRING (SIZE(2..512))
+}

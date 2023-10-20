@@ -1,0 +1,9 @@
+include "LaneEx.fbs";
+
+namespace MECData;
+
+table DF_Section {
+    secID: uint8;       // 1..63
+    lanes: [DF_LaneEx];
+    ext_id: string;                         // Extented ID as stored in center database
+}

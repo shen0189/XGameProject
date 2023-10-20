@@ -1,0 +1,12 @@
+include "PhaseState.fbs";
+
+namespace MECData;
+
+table DF_Phase {
+    id:ubyte = 255;                                           //the group id is used to map to lists of lanes(and their descriptions) which this MovementState data applies to see comments in the Remarks for usage details
+    phaseStates:[DF_PhaseState](required);
+                                                              //Consisting of sets of movement data with:
+                                                              //a)SignalPhaseState b)TimeChangeDetails, and c)AdvisorySpeeds(optional)
+                                                              //a future time and that this allows conveying multiple
+                                                              //predictive phase and movement timing for various uses for the current signal group
+}

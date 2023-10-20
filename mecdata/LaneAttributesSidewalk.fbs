@@ -1,0 +1,17 @@
+namespace MECData;
+
+table DF_LaneAttributesSidewalk {
+                                                             //With bits as defined:
+                                                             //sidewalk-RevocableLane(0),
+                                                             //this lane may be activated or not based
+                                                             //n the current SPAT message contents
+                                                             //if not asserted, the lane is ALWAYS present
+                                                             //bicyleAllowed(1),
+                                                             //T he path allows bicycle traffic,
+                                                             //if not set, t his mode is proh心ted
+                                                             //isSidewalkFlyOverLane(2),
+                                                             //path of lane is not at grade
+                                                             //walkBikes(3)
+                                                             //bike traffic must dismount and walk
+    sidewalk:byte;
+}

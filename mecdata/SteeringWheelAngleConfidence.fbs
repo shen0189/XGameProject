@@ -1,0 +1,8 @@
+namespace MECData;
+
+enum DF_SteeringWheelAngleConfidence:byte{
+    unavailable=0,                                   //B'00 Not Equipped with Wheel angle or Wheel angle status is unavailable
+    prec2deg=1,                                      //B'01 2 degrees
+    prec1deg=2,                                      //B'10 1 degree
+    prec0_02deg=3                                    //B'11 0.02 degrees
+}

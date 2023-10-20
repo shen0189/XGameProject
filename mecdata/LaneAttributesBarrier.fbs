@@ -1,0 +1,19 @@
+namespace MECData;
+
+table DF_LaneAttributesBarrier {
+                                                             //With bits as defined:
+                                                             //median-RevocableLane(0),
+                                                             //this lane may be activated or not based
+                                                             //on the current SPAT message contents
+                                                             //if not asserted , the lane is ALWAYS present
+                                                             //median(1),
+                                                             //whiteLineHashing(2),
+                                                             //stripedLines(3),
+                                                             //doubleStripedLines(4),
+                                                             //trafficCones(5),
+                                                             //constructionBarrier(6),
+                                                             //trafficChannels(7),
+                                                             //lowCurbs(8),
+                                                             //highCurbs(9)
+    median:short;
+}

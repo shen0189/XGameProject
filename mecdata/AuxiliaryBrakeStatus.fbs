@@ -1,0 +1,8 @@
+namespace MECData;
+
+enum DF_AuxiliaryBrakeStatus:byte{
+    unavailable=0,                                 //13'00 Vehicle Not Equipped with Aux Brakes or Aux Brakes status is unavailable or Aux Brakes status is unavailable
+    off=1,                                         //B'01 Vehicle's Aux Brakes are Off
+    on=2,                                          //B'10 Vehicles Aux Brakes are On(Engaged)
+    reserved=3                                     //B'11
+}

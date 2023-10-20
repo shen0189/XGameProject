@@ -1,0 +1,12 @@
+include "Node.fbs";
+
+namespace MECData;
+
+table MSG_Map {
+    timeStamp:uint = 255;                               //Minute Of The Year,INTEGER (0.. 527040),the value 527040 shall be used for invalid
+    nodes:[DF_Node](required);
+    msg_id: int64;                                      // unique id for this message
+}
+
+
+root_type MSG_Map;

@@ -1,0 +1,139 @@
+include "BasicVehicleClass.fbs";
+include "NodeReferenceID.fbs";
+include "DebugTimeRecords.fbs";
+include "Direction8.fbs";
+include "Maneuver.fbs";
+
+namespace MECData;
+
+table DE_DetectorAreaStatInfo {
+    detector_area_id: uint32;           // detector area id as stored in cloud database
+}
+
+table DE_LaneStatInfo {
+    ext_id: string (required);          // extended id for DF_LaneEx
+}
+
+table DE_SectionStatInfo {
+    ext_id: string (required);          // extended id for DF_LinkEx
+}
+
+table DE_LinkStatInfo {
+    ext_id: string (required);          // extended id for DF_LinkEx
+    direction: DE_Direction8;
+}
+
+table DE_ConnectingLaneStatInfo {
+    ext_id: string (required);          // extended id for DF_ConnectingLaneEx
+}
+
+table DE_ConnectionStatInfo {
+    ext_id: string (required);          // extended id for DF_ConnectionEx
+}
+
+table DE_MovementStatInfo {
+    ext_id: string (required);          // extended id for DF_MovementEx
+    from_direction: DE_Direction8;
+    maneuver: DE_Maneuver;
+}
+
+table DE_NodeStatInfo {
+    id: DF_NodeReferenceID (required);
+}
+
+union DE_TrafficFlowStatMapElement {
+    DE_DetectorAreaStatInfo,
+    DE_LaneStatInfo,
+    DE_SectionStatInfo,
+    DE_LinkStatInfo,
+    DE_ConnectingLaneStatInfo,
+    DE_ConnectionStatInfo,
+    DE_MovementStatInfo,
+    DE_NodeStatInfo
+}
+
+table DE_TrafficFlowStatByInterval {
+    interval: uint32;                   // in second
+}
+
+table DE_TrafficFlowStatBySignalCycle {
+    sequence: uint32;                   // sequence of MSG_SignalExecution
+}
+
+union DE_TrafficFlowStatType {
+    DE_TrafficFlowStatByInterval,
+    DE_TrafficFlowStatBySignalCycle,
+}
+
+table DF_SignalControlStatExtension {
+    phasic_order: uint8;                // order of DF_PhasicExec
+    green_start_queue: uint32 = 4294967295;
+                                        // in 0.01 meters, 4294967295 (max uint32) as invalid
+    red_start_queue: uint32 = 4294967295;
+                                        // in 0.01 meters, 4294967295 (max uint32) as invalid
+    green_utilization: uint16 = 65535;  // in 0.01%, 65535 as invalid
+}
+
+table DF_MapElementStatExtension {
+    timestamp: uint64;                  // UNIX timestamp in milliseconds
+    capacity: uint32 = 4294967295;      // 0.01 pcu/h, 4294967295 (max uint32) as invalid
+    avg_saturation: uint16 = 65535;     // 0.01%, 65535 as invalid
+    avg_occupation: uint16 = 65535;     // 0.01%, 65535 as invalid
+    avg_time_occupation: uint16 = 65535;
+                                        // 0.01%, 65535 as invalid
+    avg_green_start_queue: uint32 = 4294967295;
+                                        // in 0.01 meters, 4294967295 (max uint32) as invalid
+    avg_red_start_queue: uint32 = 4294967295;
+                                        // in 0.01 meters, 4294967295 (max uint32) as invalid
+    green_utilization: uint16 = 65535;  // in 0.01%, 65535 as invalid
+}
+
+table DF_OtherStatExtension {
+    stat_name: string(required);
+    numeric_value: int64 = 0;
+    string_value: string;
+}
+
+table DF_TrafficFlowStatExtension {
+    map_element: [DF_MapElementStatExtension];
+    signal: [DF_SignalControlStatExtension];
+    others: [DF_OtherStatExtension];
+}
+
+table DF_TrafficFlowStat {
+    map_element: DE_TrafficFlowStatMapElement;
+    ptc_type: uint8 = 255;              // unknown (0), motor (1), non-motor (2), pedestrian (3), rsu (4)
+    veh_type: DE_BasicVehicleClass = unknownVehicleClass;
+                                        // use unknownVehicleClass if aggregated over vehicle types
+                                        // or using node_ext listed below
+    volume: uint64 = 18446744073709551615;
+                                        // 0.01 pcu/h, 18446744073709551615 (max uint64) as invalid
+    speed_point: uint32 = 4294967295;   // 0.01 m/s, 4294967295 (max uint32) as invalid
+    speed_area: uint32 = 4294967295;    // 0.01 m/s, 4294967295 (max uint32) as invalid
+    density: uint64 = 18446744073709551615;
+                                        // 0.01 pcu/km, 18446744073709551615 (max uint64) as invalid
+    delay: uint16 = 65535;              // 0.1 sec/vehicle, 65535 (max uint16) as invalid
+    queue_length: uint16 = 65535;       // 0.1 m, 65535 (max uint16) as invalid
+    congestion: uint8 = 255;            // customized congestion level index, 255 (max uint8) as invalid
+    ext: DF_TrafficFlowStatExtension;   // Extended statistics
+    occupation: uint16 = 65535;         // 0.01%, 65535 as invalid
+    time_headway: uint32 = 4294967295;  // 0.01s, 4294967295 as invalid
+    space_headway: uint32 = 4294967295; // 0.01m, 4294967295 as invalid
+    travel_time: uint16 = 65535;        // 0.1 sec/vehicle, 65535 (max uint16) as invalid
+    green_utilization: uint16 = 65535;  // 0.01%, 65535 as invalid
+    saturation: uint16 = 65535;         // 0.01%, 65535 as invalid
+    stops: uint8 = 255;                 // 0.1 times, 255 as invalid
+    queued_vehicles: uint16 = 65535;    // vehicles
+    time_occupation: uint16 = 65535;    // 0.01%, 65535 as invalid
+}
+
+table MSG_TrafficFlow {
+    node: DF_NodeReferenceID;           // set when attached to a specific node
+    gen_time: uint64;                   // UNIX timestamp in milliseconds
+    stat_type: DE_TrafficFlowStatType (required);
+    stats: [DF_TrafficFlowStat];        // All traffic flow statistics
+    time_records: DF_DebugTimeRecords;
+    msg_id: int64;                      // unique id for this message
+}
+
+root_type MSG_TrafficFlow;

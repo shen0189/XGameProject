@@ -1,0 +1,9 @@
+include "VehicleEventFlags.fbs";
+include "ExteriorLights.fbs";
+
+namespace MECData;
+
+table DF_VehicleSafetyExtensions {
+    events:DF_VehicleEventFlags;
+    lights:DF_ExteriorLights;
+}

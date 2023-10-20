@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_Position3D {
+    lat:int = 2147483647;                               //Latitude,LSB = 1/10 micro degree,Providing a range of plus-minus 90 degrees
+    lon:int = 2147483647;                               //Longitude,LSB = 1/10 micro degree,Providing a range of plus-minus 180 degrees
+    ele:short;                                          //Elevation,units of 10 cm steps above or below the reference elli psoid,Provid ing a range of - 409.5 to + 6143.9 meters,The value -4 096 shall be used when Unknown is to be sent
+}

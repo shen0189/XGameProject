@@ -1,0 +1,17 @@
+include "NodeReferenceID.fbs";
+include "RegulatorySpeedLimit.fbs";
+include "RoadPoint.fbs";
+include "Movement.fbs";
+include "Lane.fbs";
+
+namespace MECData;
+
+table DF_Link {
+    name:string;                                     //Link name
+    upstreamNodeId:DF_NodeReferenceID(required);
+    speedLimits:[DF_RegulatorySpeedLimit];
+    laneWidth:ushort;                                //INTEGER (0..32767),units of 1 cm
+    points:[DF_RoadPoint];
+    movements:[DF_Movement];
+    lanes:[DF_Lane](required);
+}

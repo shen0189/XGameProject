@@ -1,0 +1,11 @@
+namespace MECData;
+
+table DF_DDateTime {
+    year: ushort;                                     //INTEGER(0..4095),units of years
+    month: ubyte;                                     //INTEGER(0..12),units of months
+    day: ubyte;                                       //INTEGER(0..31),units of days
+    hour: ubyte;                                      //INTEGER(0..24)units of hours
+    minute: ubyte;                                    //INTEGER(0..60),units of minutes
+    second: ushort;                                   //INTEGER(0..60000),units of milliseconds
+    offset: short;                                    //INTEGER(-720..721)units of min utes from UTC time
+}

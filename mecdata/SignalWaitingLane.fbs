@@ -1,0 +1,10 @@
+include "RoadPoint.fbs";
+
+namespace MECData;
+
+table DF_SingleWaitingLane {
+    laneWidth: ushort;              // INTEGER (0..32767) -- units of 1 cm
+    points: [DF_RoadPoint];
+    allowedPhaseIDs: [uint8];       // e.g. for a typical left turn waiting area, 
+                                    // both left turn phases and go straight phase are allowed
+}

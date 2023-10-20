@@ -1,0 +1,8 @@
+include "NodeReferenceID.fbs";
+
+namespace MECData;
+
+table DF_Movement {
+    remoteIntersection:DF_NodeReferenceID(required);            //This entry indicates the downstream intersection of the link this lane connects to.
+    phaseId:ubyte;                                              //The matching signal group send by the SPAT message for this lane/maneuver.Shall be present unless the connectingLane has no s ignal group(is un-signalized)
+}

@@ -1,0 +1,22 @@
+namespace MECData;
+
+table DF_LaneAttributesParking {
+                                                             //With bits as defined:
+                                                             //Parking use deta ils, note that detailed restrictions such as
+                                                             //allowed hours are sent by way of IT IS codes in the T IM message
+                                                             //parkingRevocableLane (0) ,
+                                                             //this lane may be activated or not based
+                                                             //on the current SPAT message contents
+                                                             //if not asserted, the lane is ALWAYS present
+                                                             //parallelParkinginUse(1),
+                                                             //headlnParkinglnUse(2) ,
+                                                             //doNotParkZone(3) ,
+                                                             //used to denote fire hydrants as well as
+                                                             //short disruptions in a parking zone
+                                                             //parkingForBusUse(4),
+                                                             //parkingForTaxiUse(5),
+                                                             //noPublicParkingUse(6)
+                                                             //private parking, as in front of
+                                                             //private property
+    parking:byte;
+}

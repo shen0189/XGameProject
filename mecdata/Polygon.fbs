@@ -1,0 +1,7 @@
+include "PositionOffsetLLV.fbs";
+
+namespace MECData;
+
+table DF_Polygon {
+    polygon: [DF_PositionOffsetLLV];        // (4..32)
+}

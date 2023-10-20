@@ -1,0 +1,13 @@
+include "Polygon.fbs";
+
+namespace MECData;
+
+// 交叉口禁止停车区域
+
+table DF_ProhibitedZone {
+    centralCirclePrihibitedZone: DF_Polygon;
+    non_motorVehicleProhibitedZones: [DF_Polygon];          // (1..16)
+    gridLineMarkingProhibitedZones: [DF_Polygon];           // (2..16)
+                                                            // Grid line marking prohibited zones
+                                                            // inside the node(intersection) or at the in-links of this node
+}

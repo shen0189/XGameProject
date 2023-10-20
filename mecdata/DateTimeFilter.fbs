@@ -1,0 +1,13 @@
+include "Month.fbs";
+include "Weekday.fbs";
+include "LocalTimePoint.fbs";
+
+namespace MECData;
+
+table DF_DateTimeFilter {
+    month_filter: [DE_Month];
+    day_filter: [uint8];
+    weekday_filter: [DE_Weekday];
+    from_time_point: DF_LocalTimePoint;
+    to_time_point: DF_LocalTimePoint;
+}

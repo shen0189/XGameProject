@@ -1,0 +1,29 @@
+namespace MECData;
+
+table DF_LaneAttributesBike {
+                                                             //With bits as defined:
+                                                             //bikeRevocableLane (0),
+                                                             //this lane may be activated or not based
+                                                             //n the current SPAT message contents
+                                                             //if not asserted, the lane is ALWAYS present
+                                                             //pedestrianUseAllowed (1),
+                                                             //The path allows pedestrian traffic,
+                                                             //if not set, this mode is prohibited
+                                                             //isBikeFlyOverLane (2),
+                                                             //path of lane is not at grade
+                                                             //fixedCycleTime (3),
+                                                             //the phases use preset times
+                                                             //i.e. there is not a 'push to cross' button
+                                                             //biDirectionalCycleTimes (4),
+                                                             //ped walk phases use different SignalGroupID
+                                                             //for each direction. The first SignalGroupID
+                                                             //in the first Connection represents 'inbound'
+                                                             //flow (the direction of travel towards the first
+                                                             //node point) while second SignalGroupID in the
+                                                             //next Connection entry represents the 'outbound'
+                                                             //flow. And use of RestrictionClassID entries
+                                                             //in the Connect follow this same pattern in pairs.
+                                                             //isolatedByBarrier (5),
+                                                             //unsignalizedSegmentsPresent (6)
+    bike:byte;
+}

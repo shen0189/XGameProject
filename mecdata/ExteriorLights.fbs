@@ -1,0 +1,15 @@
+namespace MECData;
+
+table DF_ExteriorLights {
+                                                 //All lights off is indicated by no bits set
+                                                 //lowBeamHeadlightsOn=0,
+                                                 //highBeamHeadlightsOn=1,
+                                                 //leftTurnSignalOn=2,
+                                                 //rightTurnSignalOn=3,
+                                                 //hazardSignalOn=4,
+                                                 //automaticLightControlOn=5,
+                                                 //daytimeRunningLightsOn=6,
+                                                 //fogLightOn=7,
+                                                 //parkingLightsOn=8
+    lights:short;
+}

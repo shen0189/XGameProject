@@ -1,0 +1,17 @@
+include "LaneAttributes.fbs";
+include "Connection.fbs";
+include "RegulatorySpeedLimit.fbs";
+include "RoadPoint.fbs";
+include "AllowedManeuvers.fbs";
+
+namespace MECData;
+
+table DF_Lane {
+    laneId:ubyte= 255;                              //INTEGER (0.. 255) ,the value O shall be used when the lane ID is not available or not known the value 255 is reserved for future use
+    laneWidth:ushort;                               //INTEGER (0..32767) -- units of 1 cm
+    laneAttributes:DF_LaneAttributes;
+    maneuvers:DF_AllowedManeuvers;                          
+    connectsTo:[DF_Connection];
+    speedLimits:[DF_RegulatorySpeedLimit];
+    points:[DF_RoadPoint];
+}

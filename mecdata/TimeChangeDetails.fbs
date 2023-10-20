@@ -1,0 +1,9 @@
+include "TimeCountingDown.fbs";
+include "UTCTiming.fbs";
+
+namespace MECData;
+
+union DF_TimeChangeDetails {
+    DF_TimeCountingDown,
+    DF_UTCTiming
+}

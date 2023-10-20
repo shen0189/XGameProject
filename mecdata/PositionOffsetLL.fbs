@@ -1,0 +1,20 @@
+include "PositionLL24B.fbs";
+include "PositionLL28B.fbs";
+include "PositionLL32B.fbs";
+include "PositionLL36B.fbs";
+include "PositionLL44B.fbs";
+include "PositionLL48B.fbs";
+include "PositionLLmD64b.fbs";
+
+namespace MECData;
+
+union DF_PositionOffsetLL {
+                                                       //Locations with LL content Span at the equator when using a zoom of one :
+    DF_PositionLL24B,                                  //within + - 22.634554 meters of the. refe rence position
+    DF_PositionLL28B,                                  //within + - 90.571389 meters of t he reference position
+    DF_PositionLL32B,                                  //within + - 362.31873 meters of the reference position
+    DF_PositionLL36B,                                  //within + - 01.449308 Kmeters of the reference position
+    DF_PositionLL44B,                                  //within +- 23.189096 Kmeters of t he refe rence position
+    DF_PositionLL48B,                                  //within+- 92 .756481 Kmeters of t he reference position
+    DF_PositionLLmD64b                                 //node is a full 32b Lat/ Lon range
+}

@@ -1,0 +1,8 @@
+namespace MECData;
+
+enum DE_Maneuver: uint8 {
+    maneuverStraight = 0,
+    maneuverLeftTurn = 1,
+    maneuverRightTurn = 2,
+    maneuverUTurn = 3
+}

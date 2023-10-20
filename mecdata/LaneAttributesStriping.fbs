@@ -1,0 +1,21 @@
+namespace MECData;
+
+table DF_LaneAttributesStriping {
+                                                             //With bits as defined:
+                                                             //tripeToConnectingLanesRevocableLane (0),
+                                                             //this lane may be activated or not activated based
+                                                             //on the current SPAT message contents
+                                                             //if not asserted, the lane is ALWAYS present
+                                                             //stripeDrawOnLeft (1),
+                                                             //stripeDrawOnRight (2),
+                                                             //which side of lane to mark
+                                                             //stripeToConnectingLanesLeft (3),
+                                                             //stripeToConnectingLanesRight (4),
+                                                             //stripeToConnectingLanesAhead (5)
+                                                             //the stripe type should be
+                                                             //presented to the user visually
+                                                             //to reflect stripes in the
+                                                             //intersection for the type of
+                                                             //movement indicated
+    striping:byte;
+}

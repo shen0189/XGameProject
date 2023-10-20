@@ -1,0 +1,13 @@
+
+namespace MECData;
+
+enum DF_SpeedConfidence:byte {
+    unavailable=0,                                 //Not Equipped or unavailable
+    prec100ms=1,                                   // 100 meters / sec
+    prec10ms=2,                                    // 10 meters / sec
+    prec5ms=3,                                     // 5 meters / sec
+    prec1ms=4,                                     // 1 meters / sec
+    prec01ms=5,                                    // 0.1 meters / sec
+    prec005ms=6,                                   // 0.05 meters / sec
+    prec001ms=7                                    // 0.01 meters / sec
+}

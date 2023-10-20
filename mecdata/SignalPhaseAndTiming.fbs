@@ -1,0 +1,16 @@
+include "IntersectionState.fbs";
+include "DebugTimeRecords.fbs";
+
+namespace MECData;
+
+table MSG_SignalPhaseAndTiming {
+    moy:uint;                                                //minute of the year,the value 527040 shall be used for invalid
+    timeStamp:ushort;                                        //0~59999, milliseconds in one minute
+                                                             //Time stamp when this message is formed
+    name:string;                                             //human readable name for this collection ,to be used only in debug mode
+    intersections:[DF_IntersectionState](required);          //sets of SPAT data(one per intersection)
+    time_records: DF_DebugTimeRecords;
+    msg_id: int64;                                          // unique id for this message
+}
+
+root_type MSG_SignalPhaseAndTiming;

@@ -1,0 +1,6 @@
+namespace MECData;
+
+table DF_NodeReferenceID {
+    region: ushort;                                  //INTEGER (0..65535),The value zero shall be used for testing only,a globally unique regional assignment value,typical assigned to a regional DOT authority,the value zero shall be used for testing needs
+    id: ushort = 65535;                              //INTEGER (0..65535),a unique mapping to the node,in question within the above region of use
+}

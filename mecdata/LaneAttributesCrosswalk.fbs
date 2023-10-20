@@ -1,0 +1,36 @@
+namespace MECData;
+
+table DF_LaneAttributesCrosswalk {
+                                                             //With bits as defined:
+                                                             //crosswalkRevocableLane(0),
+                                                             //this lane may be activated or not based
+                                                             //on the current SPAT message contents
+                                                             //if not asserted, t he lane is ALWAYS present
+                                                             //bicyleUseAllowed(1),
+                                                             //The path allows bicycle traffic ,
+                                                             //if not set, this mode is prohted
+                                                             //isXwalkFlyOverLane(2),
+                                                             //path of lane is not at grade
+                                                             //fixedCycleTi(3),
+                                                             //ped walk phases use preset times
+                                                             //i . e . there is not a ' push to cross'button
+                                                             //biDirectionalCycleTimes(4),
+                                                             //ped walk phases use different SignalGrouplD
+                                                             //fo r each direction. T he fi rst SignalGrouplD
+                                                             //in the first Connection represents' inbound'
+                                                             //flow (the direction of travel towards the first
+                                                             //node poi nt)whi le second SignalGroupID in the
+                                                             //next Connection entry represents the'outbound'
+                                                             //flow. And use of RestrictionClassID entries
+                                                             //in the Connect fol low this same pattern in pairs.
+                                                             //hasPushToWalkButton(5),
+                                                             //Has a demand input
+                                                             //audioSupport(6),
+                                                             //audio crossing cues present
+                                                             //rfSignalRequestPresent(7),
+                                                             //Supports RF push tO walk technologies
+                                                             //unsignalizedSegmentsPresent(8)
+                                                             //T he lane path consists of one of more segments
+                                                             //which are not part of a signal group ID
+    crosswalk:short;
+}

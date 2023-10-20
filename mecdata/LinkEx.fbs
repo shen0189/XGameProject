@@ -1,0 +1,28 @@
+include "NodeReferenceID.fbs";
+include "RegulatorySpeedLimit.fbs";
+include "RoadPoint.fbs";
+include "MovementEx.fbs";
+include "Section.fbs";
+include "RoadClass.fbs";
+include "Direction8.fbs";
+
+namespace MECData;
+
+table DF_LinkEx {
+    name: string;
+    upstreamNodeId: DF_NodeReferenceID (required);
+    speedLimits: [DF_RegulatorySpeedLimit];
+    refLine: [DF_RoadPoint];                // Define reference line of this link
+                                            // Using the points list from upstream to downstream
+                                            // along center of lane 0 of this link
+                                            // Ref. Link must cover the whole link, from the link entrance to the stop link
+    movements_ex: [DF_MovementEx];          // Define movements at intersection
+    sections: [DF_Section];                 // Link sections belong to this link
+                                            // listed from upstream to downstream
+                                            // Different sections are generally seperated according to lane increase or decrease
+    ext_id: string;                         // Extented ID as stored in center database
+    direction: DE_Direction8 = N;           // Link Direction
+    road_class: DE_RoadClass = UNCLASSIFIED;
+                                            // Road classification
+    length: uint32;                         // in meters
+}

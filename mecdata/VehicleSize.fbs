@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_VehicleSize {
+    width:ushort = 65535;                               //INTEGER (0..1023),LSB units are 1 cm with a range of >10 meters
+    length:ushort = 65535;                              //(0.. 4095),LSB units of 1 cm with a range of >40 meters
+    height:ubyte;                                       // INTEGER (0..127),LSB units of 5 cm, range to 6.35 meters
+}

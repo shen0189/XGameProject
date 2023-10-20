@@ -1,0 +1,8 @@
+include "SpeedLimitType.fbs";
+
+namespace MECData;
+
+table DF_RegulatorySpeedLimit {
+    type:DF_SpeedLimitType;
+    speed:ushort= 65535;	                                    //The speed in units of 0.02 m/s. See Section 11 for converting and translating,speed expressed in mph into units of m/s
+}

@@ -1,0 +1,8 @@
+namespace MECData;
+
+enum DF_AntiLockBrakeStatus:byte{
+    unavailable = 0,                                 //B'OO Vehicle Not Equipped with ABS Brakes or ABS Brakes status is unavaila ble
+    off = 1,                                         //B'Ol Vehicl e's ABS a re Off
+    on = 2,                                          //B'lO Vehicles ABS are On(bu t not Engaged )
+    engaged = 3                                      //B'll Vehicle's ABS control is Engaged on any wheel
+}

@@ -1,0 +1,44 @@
+namespace MECData;
+
+enum DF_TimeConfidence:byte{
+    unavailable=0,                                     //Not Equipped or unavailable 
+    time100000=1,                                      //Better than 100 Seconds 
+    time050000=2,                                      //Better than 50 Seconds 
+    time020000=3,                                      //Better than 20 Seconds 
+    time010000=4,                                      //Better than 10 Seconds 
+    time002000=5,                                      //Better than 2 Seconds 
+    time001000=6,                                      //Better than 1 Second 
+    time000500=7,                                      //Better than 0.5 Seconds 
+    time000200=8,                                      //Better than 0.2 Seconds 
+    time000100=9,                                      //Better than 0.1 Seconds 
+    time000050=10,                                     //Better than 0.05 Seconds 
+    time000020=11,                                     //Better than 0.02 Seconds 
+    time000010=12,                                     //Better than 0.01 Seconds 
+    time000005=13,                                     //Better than 0.005 Seconds 
+    time000002=14,                                     //Better than 0.002 Seconds 
+    time000001=15,                                     //Better than 0.001 Seconds, Better than one millisecond
+    time0000005=16,                                    //Better than 0.000,5 Seconds 
+    time0000002=17,                                    //Better than 0.000,2 Seconds 
+    time0000001=18,                                    //Better than 0.000,1 Seconds 
+    time00000005=19,                                   //Better than 0.000,05 Seconds 
+    time00000002=20,                                   //Better than 0.000,02 Seconds 
+    time00000001=21,                                   //Better than 0.000,01 Seconds 
+    time000000005=22,                                  //Better than 0.000,005 Seconds 
+    time000000002=23,                                  //Better than 0.000,002 Seconds 
+    time000000001=24,                                  //Better than 0.000,001 Seconds, Better than one micro second
+    time0000000005=25,                                 //Better than 0.000,000,5 Seconds 
+    time0000000002=26,                                 //Better than 0.000,000,2 Seconds 
+    time0000000001=27,                                 //Better than 0.000,000,1 Seconds 
+    time00000000005=28,                                //Better than 0.000,000,05 Seconds 
+    time00000000002=29,                                //Better than 0.000,000,02 Seconds 
+    time00000000001=30,                                //Better than 0.000,000,01 Seconds 
+    time000000000005=31,                               //Better than 0.000,000,005 Seconds 
+    time000000000002=32,                               //Better than 0.000,000,002 Seconds 
+    time000000000001=33,                               //Better than 0.000,000,001 Seconds, Better than one nano second
+    time0000000000005=34,                              //Better than 0.000,000,000,5 Seconds
+    time0000000000002=35,                              //Better than 0.000,000,000,2 Seconds 
+    time0000000000001=36,                              //Better than 0.000,000,000,1 Seconds 
+    time00000000000005=37,                             //Better than 0.000,000,000,05 Seconds 
+    time00000000000002=38,                             //Better than 0.000,000,000,02 Seconds 
+    time00000000000001=39                              //Better than 0.000,000,000,01 Seconds
+}

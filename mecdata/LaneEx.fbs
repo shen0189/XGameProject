@@ -1,0 +1,31 @@
+include "LaneAttributes.fbs";
+include "AllowedManeuvers.fbs";
+include "RegulatorySpeedLimit.fbs";
+include "ConnectionEx.fbs";
+include "STPoint.fbs";
+include "RoadMark.fbs";
+include "RoadPoint.fbs";
+
+namespace MECData;
+
+table DF_LaneEx {
+    laneRefID: int8;                // Lane reference id related to reference line of this link
+                                    // Ref. line belongs to lane ref. id 0
+                                    // Lane ref. ids on the left side of ref. line should be 1, 2, 3, ... in sequence
+                                    // Ref. ids on the right side should be -1, -2, -3, ... in sequence
+                                    // INTEGER (-31..31)
+    laneWidth: ushort;              // INTEGER (0..32767) -- units of 1 cm
+    laneAttributes: DF_LaneAttributes;
+    maneuvers: DF_AllowedManeuvers;
+    connectsTo_ex: [DF_ConnectionEx];
+    speedLimits: [DF_RegulatorySpeedLimit];
+    stpoints: [DF_STPoint];         // Points list of the center ofthis lane
+                                    // using ST coordinates
+    ext_id: string;                 // Extented ID as stored in center database
+    road_marks: [DF_RoadMark];      // Roadmarks, in ascending order of s_offset
+                                    // For Ref. id < 0, describes the right border
+                                    // For Ref. id > 0, describes the left border
+                                    // For Ref. id = 0, describes center line
+    offset_points: [DF_RoadPoint];  // optional
+                                    // uses lat and lon offset instead of st points
+}

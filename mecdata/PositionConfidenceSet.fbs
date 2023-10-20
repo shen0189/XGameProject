@@ -1,0 +1,9 @@
+include "PositionConfidence.fbs";
+include "ElevationConfidence.fbs";
+
+namespace MECData;
+
+table DF_PositionConfidenceSet {
+    pos:DF_PositionConfidence;                         //for both horizontal directions
+    elevation:DF_ElevationConfidence;
+}

@@ -1,0 +1,13 @@
+
+namespace MECData;
+
+enum DF_AngularVConfidence:byte {
+    unavailable=0,                                  //Not Equipped or unavailable
+    prec100deg =1,                                  //100 m/s2
+    prec10deg=2,                                    //10 m/s2
+    prec5deg=3,                                     //5 m/s2
+    prec1deg=4,                                     //1 m/s2
+    prec01deg=5,                                    //0.1 m/s2
+    prec005deg=6,                                   //0.05 m/s2
+    prec001deg=7                                    //0.01m/s2
+}

@@ -1,0 +1,12 @@
+include "TimeChangeDetails.fbs";
+include "LightState.fbs";
+
+namespace MECData;
+
+table DF_PhaseState {
+    light:DF_LightState;                                      //Consisting of:Phase state(the basic 11 states) Directional, protected , or permissive state
+    timing:DF_TimeChangeDetails;
+                                                              //Timing Data in UTC time stamps for event
+                                                              //includes start and min/max end times of phase
+                                                              //confidence and estimated next occurrence
+}

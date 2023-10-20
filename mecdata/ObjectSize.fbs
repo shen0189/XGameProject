@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_ObjectSize {
+    width: uint16;          // 10 cm
+    length: uint16;         // 10 cm
+    height: uint16 = 0;     // 10 cm
+}

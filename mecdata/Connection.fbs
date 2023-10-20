@@ -1,0 +1,10 @@
+include "NodeReferenceID.fbs";
+include "ConnectingLane.fbs";
+
+namespace MECData;
+
+table DF_Connection{
+    remoteIntersection:DF_NodeReferenceID(required);             // This entry indicates the downst ream intersection of the link this lane connects to.This provides a means to create meshes of lanes
+    connectingLane:DF_ConnectingLane;                            // The index of the connecting lane and also the maneuver from the current lane to it When we want tO list the allowed lanes of the next link this lane can lead to , we use this entry
+    phaseid:ubyte;                                               // The matching signal group send by the SPAT message for this lane/maneuver.Shall be present unless the connectingLane has no signal group(is un-signalized)
+}

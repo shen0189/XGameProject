@@ -1,0 +1,19 @@
+include "BrakePedalStatus.fbs";
+include "BrakeAppliedStatus.fbs";
+include "TractionControlStatus.fbs";
+include "AntiLockBrakeStatus.fbs";
+include "StabilityControlStatus.fbs";
+include "BrakeBoostApplied.fbs";
+include "AuxiliaryBrakeStatus.fbs";
+
+namespace MECData;
+
+table DF_BrakeSystemStatus{
+    brakePadel:DF_BrakePedalStatus;
+    wheelBrakes:DF_BrakeAppliedStatus;
+    traction:DF_TractionControlStatus;
+    abs:DF_AntiLockBrakeStatus;
+    scs:DF_StabilityControlStatus;
+    brakeBoost:DF_BrakeBoostApplied;
+    auxBrakes:DF_AuxiliaryBrakeStatus;
+}

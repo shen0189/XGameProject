@@ -1,0 +1,30 @@
+namespace MECData;
+
+table DF_TimeCountingDown {
+    startTime:ushort = 65535;                                 //In units of 1/lOth second from UTC time
+                                                              //When this phase state started,if already started, the value is 0
+    minEndTime:ushort;                                        //In units of 1/lOth second from UTC time
+                                                              //Expected shortest end time 
+                                                              //if already started , the value is the min left time from now 
+                                                              //if not started, the value. means the min length of this phase
+    maxEndTime:ushort;                                        //In units of 1/lOth second from UTC time,
+                                                              //Expected longest end time 
+                                                              //if already started, the value is the max left time from now
+                                                              //if not started , the value means the max length of this phase
+    likelyEndTime:ushort = 65535;                             //In units of 1/lOth second from UTC time
+                                                              //Best predicted value based on other data
+                                                              //if already started, the value is the likely left time from now
+                                                              //if not started, the value means the likely length of this phase
+    timeConfidence:ushort;                                    //In units of 1/lOth second from UTC time,Confidence of likelyTime
+    nextStartTime:ushort;                                     //In units of 1/lOth second from UTC time
+                                                              //A rough estimate of time when this phase state may next occur again
+                                                              //after the above endTime.
+                                                              //used to support various ECO driving power management needs.
+                                                              //If already started, this value is recommended to be delivered.
+    nextDuration:ushort;	                                  //In units of 1/lOth second from UTC time
+                                                              //A rough estimate of the time length of this phase state
+                                                              //when it may next occur again after the above endTime.
+                                                              //used to support various ECO driving power management needs.
+                                                              //If already started, this value is recommended to be delivered.
+
+}

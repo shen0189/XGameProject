@@ -1,0 +1,13 @@
+namespace MECData;
+
+// s为车道参考线，t为车辆在垂直车道参考线上的横向距离
+
+table DF_STPoint {
+    s_axis: int32;          // INTEGER (-1024..65535)
+                            // Unit 0.1m
+                            // Longitudinal length related to the ref. line
+    t_axis: int32;          // INTEGER (-32768..32767)
+                            // Latitudinal distance in st coordinates
+                            // Positive in the left of ref. line
+                            // Negative in the right of ref. line
+}

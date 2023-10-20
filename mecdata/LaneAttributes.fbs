@@ -1,0 +1,9 @@
+include "LaneSharing.fbs";
+include "LaneTypeAttributes.fbs";
+
+namespace MECData;
+
+table DF_LaneAttributes {
+    shareWith:DF_LaneSharing;
+    laneType:DF_LaneTypeAttributes(required);
+}

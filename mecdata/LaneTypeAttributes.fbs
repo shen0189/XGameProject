@@ -1,0 +1,21 @@
+include "LaneAttributesVehicle.fbs";
+include "LaneAttributesCrosswalk.fbs";
+include "LaneAttributesBike.fbs";
+include "LaneAttributesSidewalk.fbs";
+include "LaneAttributesBarrier.fbs";
+include "LaneAttributesStriping.fbs";
+include "LaneAttributesTrackedVehicle.fbs";
+include "LaneAttributesParking.fbs";
+
+namespace MECData;
+
+union DF_LaneTypeAttributes {
+    DF_LaneAttributesVehicle,                                   //motor vehicle lanes
+    DF_LaneAttributesCrosswalk,                                 //pedestrian crosswalks
+    DF_LaneAttributesBike,                                      //bike lanes
+    DF_LaneAttributesSidewalk,                                  //pedestrian sidewalk paths
+    DF_LaneAttributesBarrier,                                   //medians & channelization
+    DF_LaneAttributesStriping,                                  //roadway markings
+    DF_LaneAttributesTrackedVehicle,                            //trains and trolleys
+    DF_LaneAttributesParking                                    //parking and stopping lanes
+}

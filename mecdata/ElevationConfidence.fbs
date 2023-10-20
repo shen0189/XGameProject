@@ -1,0 +1,21 @@
+namespace MECData;
+
+enum DF_ElevationConfidence:byte{
+    unavailable=0,			                       //B' 0000 Not Equipped or unavailable 
+    elev50000=1, 			                       //B'0001(500m) 
+    elev20000=2, 			                       //B'0010(200m) 
+    elev10000=3, 			                       //B'0011(100m) 
+    elev05000=4, 			                       //B'0100(50m) 
+    elev02000=5, 			                       //B'0101(20m) 
+    elev01000=6, 			                       //B'0110(10m) 
+    elev00500=7, 			                       //B 0111(5m) 
+    elev00200=8, 			                       //B'1000(2m) 
+    elev00100=9, 			                       //B'1001(1m) 
+    elev00050=10, 			                       //B'1010(50cm) 
+    elev00020=11, 			                       //B'1011(20cm) 	
+    elev00010=12,                                  //B'll00(10 cm)
+    elev00005=13,                                  //B11101(5 cm)
+    elev00002=14,                                  //B'lll0(2 cm)
+    elev00001=15                                   //B'llll(l cm)
+
+}

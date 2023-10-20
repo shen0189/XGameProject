@@ -1,0 +1,11 @@
+include "SpeedConfidence.fbs";
+include "HeadingConfidence.fbs";
+include "SteeringWheelAngleConfidence.fbs";
+
+namespace MECData;
+
+table DF_MotionConfidenceSet {
+    speedCfd:DF_SpeedConfidence;                             
+    headingCfd:DF_HeadingConfidence;                               
+    steerCfd:DF_SteeringWheelAngleConfidence;                                 
+}

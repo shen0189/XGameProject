@@ -1,0 +1,13 @@
+namespace MECData;
+
+table DF_Phasic {
+    id: int32;
+    order: uint8;
+    scat_no: string;
+    movements: [string];
+    green: int16;
+    yellow: int16;
+    allred: int16;
+    min_green: int16;
+    max_green: int16;
+}

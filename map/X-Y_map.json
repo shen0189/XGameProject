@@ -1,0 +1,1910 @@
+{
+  "timeStamp": 683544,
+  "nodes": [
+    {
+      "name": "junction-X-Y",
+      "refPos": {
+        "lat": 312972450,
+        "lon": 1211867760
+      },
+      "id": {
+        "id": 6772,
+        "region": 1829
+      },
+      "inLinks_ex": [
+        {
+          "name": "road-Y",
+          "speedLimits": [
+            {
+              "speed": 556,
+              "type": 5
+            }
+          ],
+          "upstreamNodeId": {
+            "id": 6748,
+            "region": 1829
+          },
+          "refLine": [
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 611,
+                  "lat": -20739
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 611,
+                  "lat": -20018
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 611,
+                  "lat": -19296
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 608,
+                  "lat": -18664
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 605,
+                  "lat": -18036
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 603,
+                  "lat": -17407
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 600,
+                  "lat": -16791
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 598,
+                  "lat": -16244
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 595,
+                  "lat": -15617
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 591,
+                  "lat": -15000
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 590,
+                  "lat": -14505
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 624,
+                  "lat": -13998
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 667,
+                  "lat": -13476
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 691,
+                  "lat": -12901
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 600,
+                  "lat": -12444
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 600,
+                  "lat": -11833
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 598,
+                  "lat": -11228
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 594,
+                  "lat": -10641
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 589,
+                  "lat": -10007
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 584,
+                  "lat": -9394
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 590,
+                  "lat": -8785
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 604,
+                  "lat": -8192
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 614,
+                  "lat": -7702
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 652,
+                  "lat": -7124
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 684,
+                  "lat": -6471
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 702,
+                  "lat": -5896
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 726,
+                  "lat": -5173
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 730,
+                  "lat": -4602
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 726,
+                  "lat": -3880
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 722,
+                  "lat": -3284
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 718,
+                  "lat": -2669
+                }
+              }
+            }
+          ],
+          "sections": [
+            {
+              "secID": 1,
+              "lanes": [
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 240,
+                  "maneuvers": {
+                    "behavior": 2
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 2271,
+                        "region": 1829
+                      },
+                      "turnDirection": 1,
+                      "ext_id": "1829+6772_1829+6748_1_1_1"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+6748_1_1"
+                },
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 342,
+                  "maneuvers": {
+                    "behavior": 1
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_1"
+                        },
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_2"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6790,
+                        "region": 1829
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1829+6748_1_2_0"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+6748_1_2"
+                },
+                {
+                  "laneRefID": 3,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 348,
+                  "maneuvers": {
+                    "behavior": 5
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_1"
+                        },
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_2"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6790,
+                        "region": 1829
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1829+6748_1_3_0"
+                    },
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1929+572_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1929+572_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 572,
+                        "region": 1929
+                      },
+                      "turnDirection": 2,
+                      "ext_id": "1829+6772_1829+6748_1_3_2"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+6748_1_3"
+                }
+              ],
+              "ext_id": "1829+6772_1829+6748_1"
+            },
+            {
+              "secID": 2,
+              "lanes": [
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 388,
+                  "ext_id": "1829+6772_1829+6748_2_2"
+                },
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 382,
+                  "ext_id": "1829+6772_1829+6748_2_1"
+                }
+              ],
+              "ext_id": "1829+6772_1829+6748_2"
+            }
+          ],
+          "movements_ex": [
+            {
+              "remoteIntersection": {
+                "id": 6790,
+                "region": 1829
+              },
+              "phaseId": 10,
+              "turnDirection": 0,
+              "ext_id": "1829+6772_1829+6748_0"
+            },
+            {
+              "remoteIntersection": {
+                "id": 572,
+                "region": 1929
+              },
+              "phaseId": 11,
+              "turnDirection": 2,
+              "ext_id": "1829+6772_1829+6748_2"
+            },
+            {
+              "remoteIntersection": {
+                "id": 2271,
+                "region": 1829
+              },
+              "phaseId": 9,
+              "turnDirection": 1,
+              "ext_id": "1829+6772_1829+6748_1"
+            }
+          ],
+          "ext_id": "1829+6772_1829+6748",
+          "direction": 4
+        },
+        {
+          "name": "road-X",
+          "speedLimits": [
+            {
+              "speed": 833,
+              "type": 5
+            }
+          ],
+          "upstreamNodeId": {
+            "id": 2271,
+            "region": 1829
+          },
+          "refLine": [
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -41315,
+                  "lat": -969
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -40021,
+                  "lat": -966
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -38771,
+                  "lat": -962
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -37405,
+                  "lat": -958
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -36197,
+                  "lat": -957
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -35132,
+                  "lat": -941
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -33851,
+                  "lat": -914
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -32752,
+                  "lat": -886
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -31599,
+                  "lat": -853
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -30404,
+                  "lat": -804
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -29402,
+                  "lat": -672
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -28036,
+                  "lat": -669
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -26671,
+                  "lat": -664
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -25305,
+                  "lat": -660
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -24114,
+                  "lat": -655
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -22749,
+                  "lat": -650
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -21383,
+                  "lat": -644
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -20170,
+                  "lat": -640
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -18805,
+                  "lat": -636
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -17439,
+                  "lat": -640
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -16279,
+                  "lat": -692
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -15069,
+                  "lat": -732
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -13854,
+                  "lat": -767
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -12592,
+                  "lat": -764
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -11480,
+                  "lat": -756
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -10418,
+                  "lat": -762
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -9213,
+                  "lat": -764
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -8009,
+                  "lat": -762
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -6750,
+                  "lat": -758
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -5665,
+                  "lat": -752
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -2836,
+                  "lat": -744
+                }
+              }
+            }
+          ],
+          "sections": [
+            {
+              "secID": 1,
+              "lanes": [
+                {
+                  "laneRefID": 3,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 360,
+                  "maneuvers": {
+                    "behavior": 5
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6748,
+                        "region": 1829
+                      },
+                      "turnDirection": 2,
+                      "ext_id": "1829+6772_1829+2271_1_3_2"
+                    },
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1929+572_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1929+572_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 572,
+                        "region": 1929
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1829+2271_1_3_0"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+2271_1_3"
+                },
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 350,
+                  "maneuvers": {
+                    "behavior": 1
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1929+572_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1929+572_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 572,
+                        "region": 1929
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1829+2271_1_2_0"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+2271_1_2"
+                },
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 380,
+                  "maneuvers": {
+                    "behavior": 2
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_1"
+                        },
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_2"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6790,
+                        "region": 1829
+                      },
+                      "turnDirection": 1,
+                      "ext_id": "1829+6772_1829+2271_1_1_1"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+2271_1_1"
+                }
+              ],
+              "ext_id": "1829+6772_1829+2271_1"
+            },
+            {
+              "secID": 2,
+              "lanes": [
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 386,
+                  "ext_id": "1829+6772_1829+2271_2_1"
+                },
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 384,
+                  "ext_id": "1829+6772_1829+2271_2_2"
+                }
+              ],
+              "ext_id": "1829+6772_1829+2271_2"
+            }
+          ],
+          "movements_ex": [
+            {
+              "remoteIntersection": {
+                "id": 572,
+                "region": 1929
+              },
+              "phaseId": 14,
+              "turnDirection": 0,
+              "ext_id": "1829+6772_1829+2271_0"
+            },
+            {
+              "remoteIntersection": {
+                "id": 6748,
+                "region": 1829
+              },
+              "phaseId": 15,
+              "turnDirection": 2,
+              "ext_id": "1829+6772_1829+2271_2"
+            },
+            {
+              "remoteIntersection": {
+                "id": 6790,
+                "region": 1829
+              },
+              "phaseId": 13,
+              "turnDirection": 1,
+              "ext_id": "1829+6772_1829+2271_1"
+            }
+          ],
+          "ext_id": "1829+6772_1829+2271",
+          "direction": 6
+        },
+        {
+          "name": "road-X",
+          "speedLimits": [
+            {
+              "speed": 833,
+              "type": 5
+            }
+          ],
+          "upstreamNodeId": {
+            "id": 572,
+            "region": 1929
+          },
+          "refLine": [
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 34824,
+                  "lat": 442
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 33840,
+                  "lat": 434
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 32925,
+                  "lat": 417
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 31914,
+                  "lat": 393
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 30844,
+                  "lat": 371
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 29883,
+                  "lat": 360
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 28763,
+                  "lat": 356
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 27664,
+                  "lat": 352
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 26562,
+                  "lat": 348
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 25409,
+                  "lat": 343
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 24235,
+                  "lat": 337
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 23081,
+                  "lat": 333
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 21821,
+                  "lat": 329
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 20754,
+                  "lat": 326
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 19691,
+                  "lat": 320
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 18638,
+                  "lat": 319
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 17589,
+                  "lat": 314
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 16626,
+                  "lat": 309
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 15557,
+                  "lat": 303
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 14490,
+                  "lat": 299
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 13510,
+                  "lat": 296
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 12441,
+                  "lat": 292
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 11471,
+                  "lat": 286
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 10476,
+                  "lat": 337
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 9528,
+                  "lat": 437
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 8591,
+                  "lat": 543
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 7547,
+                  "lat": 555
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 6592,
+                  "lat": 554
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 5676,
+                  "lat": 518
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 4722,
+                  "lat": 470
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": 2717,
+                  "lat": 387
+                }
+              }
+            }
+          ],
+          "sections": [
+            {
+              "secID": 1,
+              "lanes": [
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 326,
+                  "maneuvers": {
+                    "behavior": 1
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 2271,
+                        "region": 1829
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1929+572_1_2_0"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1929+572_1_2"
+                },
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 344,
+                  "maneuvers": {
+                    "behavior": 2
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6748,
+                        "region": 1829
+                      },
+                      "turnDirection": 1,
+                      "ext_id": "1829+6772_1929+572_1_1_1"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1929+572_1_1"
+                },
+                {
+                  "laneRefID": 3,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 318,
+                  "maneuvers": {
+                    "behavior": 5
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 2271,
+                        "region": 1829
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1929+572_1_3_0"
+                    },
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_1"
+                        },
+                        {
+                          "ext_id": "1829+6790_1829+6772_1_2"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6790,
+                        "region": 1829
+                      },
+                      "turnDirection": 2,
+                      "ext_id": "1829+6772_1929+572_1_3_2"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1929+572_1_3"
+                }
+              ],
+              "ext_id": "1829+6772_1929+572_1"
+            },
+            {
+              "secID": 2,
+              "lanes": [
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 400,
+                  "ext_id": "1829+6772_1929+572_2_1"
+                },
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 398,
+                  "ext_id": "1829+6772_1929+572_2_2"
+                }
+              ],
+              "ext_id": "1829+6772_1929+572_2"
+            }
+          ],
+          "movements_ex": [
+            {
+              "remoteIntersection": {
+                "id": 6790,
+                "region": 1829
+              },
+              "phaseId": 7,
+              "turnDirection": 2,
+              "ext_id": "1829+6772_1929+572_2"
+            },
+            {
+              "remoteIntersection": {
+                "id": 6748,
+                "region": 1829
+              },
+              "phaseId": 5,
+              "turnDirection": 1,
+              "ext_id": "1829+6772_1929+572_1"
+            },
+            {
+              "remoteIntersection": {
+                "id": 2271,
+                "region": 1829
+              },
+              "phaseId": 6,
+              "turnDirection": 0,
+              "ext_id": "1829+6772_1929+572_0"
+            }
+          ],
+          "ext_id": "1829+6772_1929+572",
+          "direction": 2
+        },
+        {
+          "name": "road-Y",
+          "speedLimits": [
+            {
+              "speed": 556,
+              "type": 5
+            }
+          ],
+          "upstreamNodeId": {
+            "id": 6790,
+            "region": 1829
+          },
+          "refLine": [
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -314,
+                  "lat": 16930
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -313,
+                  "lat": 16491
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -313,
+                  "lat": 16040
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -313,
+                  "lat": 15725
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -313,
+                  "lat": 15274
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -313,
+                  "lat": 14823
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -312,
+                  "lat": 14481
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -311,
+                  "lat": 14030
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -311,
+                  "lat": 13579
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -310,
+                  "lat": 13234
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -310,
+                  "lat": 12783
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -310,
+                  "lat": 12332
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -310,
+                  "lat": 11881
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -311,
+                  "lat": 11510
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -309,
+                  "lat": 11073
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -310,
+                  "lat": 10622
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -310,
+                  "lat": 10171
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -309,
+                  "lat": 9830
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -323,
+                  "lat": 9379
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -317,
+                  "lat": 9018
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -370,
+                  "lat": 8655
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -443,
+                  "lat": 8289
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -491,
+                  "lat": 7900
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -519,
+                  "lat": 7449
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -541,
+                  "lat": 7090
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -549,
+                  "lat": 6639
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -548,
+                  "lat": 6188
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -547,
+                  "lat": 5846
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -546,
+                  "lat": 5395
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -547,
+                  "lat": 4944
+                }
+              }
+            },
+            {
+              "posOffset": {
+                "offsetLL_type": "DF_PositionLL48B",
+                "offsetLL": {
+                  "lon": -543,
+                  "lat": 2398
+                }
+              }
+            }
+          ],
+          "sections": [
+            {
+              "secID": 1,
+              "lanes": [
+                {
+                  "laneRefID": 3,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 330,
+                  "maneuvers": {
+                    "behavior": 5
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+2271_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 2271,
+                        "region": 1829
+                      },
+                      "turnDirection": 2,
+                      "ext_id": "1829+6772_1829+6790_1_3_2"
+                    },
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6748,
+                        "region": 1829
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1829+6790_1_3_0"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+6790_1_3"
+                },
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 278,
+                  "maneuvers": {
+                    "behavior": 2
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1929+572_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1929+572_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 572,
+                        "region": 1929
+                      },
+                      "turnDirection": 1,
+                      "ext_id": "1829+6772_1829+6790_1_1_1"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+6790_1_1"
+                },
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 324,
+                  "maneuvers": {
+                    "behavior": 1
+                  },
+                  "connectsTo_ex": [
+                    {
+                      "connectingLane": [
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_2"
+                        },
+                        {
+                          "ext_id": "1829+6748_1829+6772_1_1"
+                        }
+                      ],
+                      "remoteIntersection": {
+                        "id": 6748,
+                        "region": 1829
+                      },
+                      "turnDirection": 0,
+                      "ext_id": "1829+6772_1829+6790_1_2_0"
+                    }
+                  ],
+                  "ext_id": "1829+6772_1829+6790_1_2"
+                }
+              ],
+              "ext_id": "1829+6772_1829+6790_1"
+            },
+            {
+              "secID": 2,
+              "lanes": [
+                {
+                  "laneRefID": 2,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 374,
+                  "ext_id": "1829+6772_1829+6790_2_2"
+                },
+                {
+                  "laneRefID": 1,
+                  "laneAttributes": {
+                    "laneType_type": "DF_LaneAttributesVehicle",
+                    "laneType": {
+                      "vehicle": 0
+                    }
+                  },
+                  "laneWidth": 378,
+                  "ext_id": "1829+6772_1829+6790_2_1"
+                }
+              ],
+              "ext_id": "1829+6772_1829+6790_2"
+            }
+          ],
+          "movements_ex": [
+            {
+              "remoteIntersection": {
+                "id": 2271,
+                "region": 1829
+              },
+              "phaseId": 3,
+              "turnDirection": 2,
+              "ext_id": "1829+6772_1829+6790_2"
+            },
+            {
+              "remoteIntersection": {
+                "id": 6748,
+                "region": 1829
+              },
+              "phaseId": 2,
+              "turnDirection": 0,
+              "ext_id": "1829+6772_1829+6790_0"
+            },
+            {
+              "remoteIntersection": {
+                "id": 572,
+                "region": 1929
+              },
+              "phaseId": 1,
+              "turnDirection": 1,
+              "ext_id": "1829+6772_1829+6790_1"
+            }
+          ],
+          "ext_id": "1829+6772_1829+6790",
+          "direction": 0
+        }
+      ]
+    }
+  ]
+}

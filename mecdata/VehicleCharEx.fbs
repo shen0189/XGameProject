@@ -1,0 +1,62 @@
+namespace MECData;
+
+// 路侧可感知的其他车辆特征和感知参数
+// 数据来源：路侧感知设备或VIR消息
+
+enum DE_PlateColor: uint8 {
+    UNKNOWN_PLATE_COLOR = 0,    // 未知
+    BLUE_PLATE = 1,             // 蓝
+    YELLOW_PLATE = 2,           // 黄
+    WHITE_PLATE = 3,            // 白
+    BLACK_PLATE = 4,            // 黑
+    YELLOW_GREEN_PLATE = 5,     // 黄绿双色
+    GRADIENT_GREEN_PLATE = 6,   // 渐变绿
+}
+
+enum DE_PlateType: uint8 {
+    UNKNOWN_PLATE = 0,                  // 未知UNKNOWN_PLATE_TYPE = 0, 未知类型
+    LARGE_CAR_PLATE = 1,                // 大型汽车号牌
+    SMALL_CAR_PLATE = 2,                // 小型汽车号牌
+    EMBASSY_CAR_PLATE = 3,              // 使馆汽车号牌
+    CONSULATE_CAR_PLATE = 4,            // 领馆汽车号牌
+    OVERSEAS_CAR_PLATE = 5,             // 境外汽车号牌
+    FOREIGN_CAR_PLATE = 6,              // 外籍汽车号牌
+    ORDINARY_MOTORCYCLE_PLATE = 7,      // 普通摩托车号牌
+    MOPED_PLATE = 8,                    // 轻便摩托车号牌
+    EMBASSY_MOTORCYCLE_PLATE = 9,       // 使馆摩托车号牌
+    CONSULATE_MOTORCYCLE_PLATE = 10,    // 领馆摩托车号牌
+    OVERSEAS_MOTORCYCLE_PLATE = 11,     // 境外摩托车号牌
+    FOREIGN_MOTORCYCLE_PLATE = 12,      // 外籍摩托车号牌
+    LOW_SPEED_PLATE = 13,               // 低速车号牌
+    TRACTOR_PLATE = 14,                 // 拖拉机号牌
+    TRAILER_PLATE = 15,                 // 挂车号牌
+    COACH_CAR_PLATE = 16,               // 教练汽车号牌
+    COACH_MOTORCYCLE_PLATE = 17,        // 教练摩托车号牌
+    TEMPORARY_ENTRY_PLATE = 20,         // 临时入境汽车号牌
+    TEMPORARY_ENTRY_MOTORCYCLE_PLATE = 21,  // 临时入境摩托车号牌
+    TEMPORARY_DRIVING_PLATE = 22,       // 临时行驶车号牌
+    POLICE_CAR_PLATE = 23,              // 警用汽车号牌
+    POLICE_MOTORCYCLE_PLATE = 24,       // 警用摩托车号牌
+    ORIGINAL_AGRICULTURAL_MACHINERY_PLATE = 25,     // 原农机号牌
+    HONGKONG_PLATE = 26,                // 香港入出境号牌
+    MACAU_PLATE = 27,                   // 澳门入出境号牌
+    ARMED_POLICE_PLATE = 31,            // 武警号牌
+    ARMY_PLATE = 32,                    // 军队号牌
+    NO_NUMBER_PLATE = 41,               // 无号牌
+    FAKE_PLATE = 42,                    // 假号牌
+    MISAPPROPRIATION_PLATE = 43,        // 挪用号牌
+    UNRECOGNIZED_PLATE = 44,            // 无法识别
+    LARGE_NEW_ENERGY_YELLOW_GREEN_PLATE = 51,   // 大型新能源汽车（左侧黄色右侧绿色双拼色底黑字）
+    SMALL_NEW_ENERGY_GREEN_PLATE = 52,          // 小型新能源汽车（渐变绿底黑字）
+    OTHER_PLATE = 99,                   // 其他
+}
+
+table DF_VehicleCharEx {
+    color: string;
+    typeClassificationConfidence: uint8 = 100;      // in %
+    driverBehavior: string;                         // distracted, illegal...
+    laneChangingAim: ubyte;
+    plate: string;
+    plate_color: DE_PlateColor;
+    plate_type: DE_PlateType;
+}

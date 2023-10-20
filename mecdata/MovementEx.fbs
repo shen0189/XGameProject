@@ -1,0 +1,18 @@
+include "NodeReferenceID.fbs";
+include "Maneuver.fbs";
+
+namespace MECData;
+
+table DF_MovementEx {
+    remoteIntersection:DF_NodeReferenceID(required);
+                                               // This entry indicates the downstream intersection of the link this lane connects to.
+                                               // This provides a means to create meshes of lanes
+    phaseId: ubyte;
+                                               // The matching signal group send by
+                                               // the SPAT message for this lane/maneuver.
+                                               // Shall be present unless the connectingLane
+                                               // has no signal group (is un-signalized)
+    turnDirection: DE_Maneuver;
+                                               // Indicating the turn direction corresponding to this movement
+    ext_id: string;                            // Extented ID as stored in center database
+}

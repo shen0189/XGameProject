@@ -1,0 +1,12 @@
+namespace MECData;
+
+enum DF_HeadingConfidence:byte {
+    unavailable = 0,                // B'000 Not Equipped or unavailable
+    prec10deg = 1,                  // B'010 10 degrees
+    prec05deg = 2,                  // B'011 5 degrees
+    prec01deg = 3,                  // B'100 1 degrees
+    prec_1deg = 4,                  // B'101 0.1 degrees
+    prec0_05deg = 5,                // B'110 0.05 degrees
+    prec0_01deg = 6,                // B'110 0.01 degrees
+    prec0_0125deg = 7               // B'111 0.0125 degrees, aligned with heading LSB
+}

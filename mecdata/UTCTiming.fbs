@@ -1,0 +1,20 @@
+namespace MECData;
+
+table DF_UTCTiming {
+    startUTCTime:ushort = 65535;                                //In units of 1/lOth second from UTC time
+                                                              //If already started, the value represents the time stamp when this phase state started.
+                                                              //If not, the value represents the time stamp when this phase state starts.
+    minEndUTCTime:ushort;                                     //In units of 1/lOth second from UTC time
+                                                              //The time stamp when this state 1st ends in shortest time
+    maxEndUTCTime:ushort;                                     //In units of 1/lOth second from UTC time,
+                                                              //The time stamp when this state 1st ends in longest time
+    likelyEndUTCTime:ushort = 65535;                          //In units of 1/lOth second from UTC time
+                                                              //The time stamp when this state 1st ends in best predicted time
+    timeConfidence:ushort;                                    //In units of 1/lOth second from UTC time,Confidence of likelyTime
+    nextStartUTCTime:ushort;                                  //In units of 1/lOth second from UTC time
+                                                              //A rough estimate of UTC time stamp when this phase state may next occur again used to support various ECO driving power management needs.
+                                                              //If already started, this value is recommended to be delivered.
+    nextEndUCTTime:ushort;	                                  //In units of 1/lOth second from UTC time
+                                                              //A rough estimate of UTC time stamp when this phase state ends again used to support various ECO driving power management needs.
+                                                              //If already started, this value is recommended to be delivered.
+}

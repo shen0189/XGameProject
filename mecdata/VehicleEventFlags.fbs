@@ -1,0 +1,20 @@
+namespace MECData;
+
+table DF_VehicleEventFlags {
+                                            //eventHazardLights=0,
+                                            //eventStoplineViolation=1,                      
+                                            //Intersection Violation
+                                            //eventABSactivated=2,
+                                            //eventTractionControlLoss=3,
+                                            //eventStabilityControlactivated=4,
+                                            //eventHazardousMaterials=5,
+                                            //eventReserved1=6,
+                                            //eventHardBraking=7,
+                                            //eventLightsChanged=8,
+                                            //eventWipersChanged=9,
+                                            //eventFlatTire=10,
+                                            //eventDisabledVehicle=11,                    
+                                            //The DisabledVehicle DF may also be sent
+                                            //eventAirbagDeployment =12
+    events:short;
+}

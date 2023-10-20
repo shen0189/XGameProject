@@ -1,0 +1,7 @@
+namespace MECData;
+
+enum DF_BrakePedalStatus:byte{
+    unavailable = 0,                                 // Vehicle brake pedal detector is unavailable
+    off = 1,                                         // Vehicle's brake padel is not pressed
+    on = 2                                           // Vehicle's brake padel is pressed
+}

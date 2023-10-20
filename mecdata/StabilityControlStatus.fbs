@@ -1,0 +1,8 @@
+namespace MECData;
+
+enum DF_StabilityControlStatus:byte{
+    unavailable=0,                               //B'00 Not Equipped with SC or SC status is unavailable        
+    off=1,                                       //B'01 Off
+    on=2,                                        //B'10 On or active (but not engaged)
+    engaged=3                                    //B'11 traction control is Engaged
+}

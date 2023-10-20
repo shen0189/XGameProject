@@ -1,0 +1,50 @@
+namespace MECData;
+
+enum DE_RoadMarkColor : uint8 {
+    WHITE = 0,
+    BLUE = 1,
+    YELLOW = 2,
+    GREEN = 3,
+    ORANGE = 4,
+    RED = 5
+}
+
+enum DE_RoadMarkType: uint8 {
+    NONE = 0,
+    SOLID = 1,                  // 实线
+    BROKEN = 2,                 // 虚线
+    SOLID_SOLID = 3,            // 双实线
+    SOLID_BROKEN = 4,           // 实线+虚线
+    BROKEN_SOLID = 5,           // 虚线+实线
+    BROKEN_BROKEN = 6,          // 双虚线
+    BOTTS_DOTS = 7,             // 路钉
+    GRASS = 8,                  // 绿化
+    CURB = 9,                   // 路缘
+    EDGE = 10                   // 导流岛边缘线等不可侵入空间
+}
+
+enum DE_RoadMarkCrossRule: uint8 {
+    NO_PASSING = 0,
+    CAUTION = 1,
+    NONE = 2
+}
+
+table DF_RoadMarkLine {
+    length: uint32;                         // in 0.01m
+    space: uint32;                          // in 0.01m
+    t_offset: int32;                        // in 0.1m
+    s_offset: uint32;                       // in 0.1m
+    width: uint32;                          // in 0.01m
+    color: DE_RoadMarkColor;
+}
+
+table DF_RoadMark {
+    s_offset: uint32;                       // in 0.1m
+    mark_type: DE_RoadMarkType;
+    color: DE_RoadMarkColor;
+    lane_change_to_left: bool = false;
+    lane_change_to_right: bool = false;
+    width: uint8;                           // in 0.01m
+    height: uint8;                          // in 0.01m
+    lines: [DF_RoadMarkLine];               // 多根线组合
+}

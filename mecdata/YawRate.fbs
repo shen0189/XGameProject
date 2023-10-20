@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_YawRate {
+                                                     // LSB units of of 10 cm 
+                                                     // with a range of -409.5 to + 6143.9 meters
+    vert:short;
+}

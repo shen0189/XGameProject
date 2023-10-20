@@ -1,0 +1,17 @@
+namespace MECData;
+
+enum DE_ObstacleType: uint8 {
+    unknown = 0,
+    rockfall = 1,
+    landslide = 2,
+    animal_intrusion = 3,
+    liquid_spill = 4,
+    goods_scattered = 5,
+    trafficcone = 6,
+    safety_triangle = 7,
+    traffic_roadblock = 8,
+    inspection_shaft_without_cover = 9,
+    unknown_fragments = 10,
+    unknown_hard_object = 11,
+    unknown_soft_object = 12,
+}

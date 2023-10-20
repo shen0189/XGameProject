@@ -1,0 +1,17 @@
+namespace MECData;
+
+enum DF_SpeedLimitType:byte{
+    unknown=0,                                     //Speed limit type not available
+    maxSpeedInSchoolZone=1,                        //Only sent when the limit is active
+    maxSpeedInSchoolZoneWhenChildrenArePresent=2,  //Sent at any time
+    maxSpeedInConstructionZone=3,                  //Used for work zones, incident zones, etc.where a reduced speed is present
+    vehicleMinSpeed=4,
+    vehicleMaxSpeed=5,                             //Regulatory speed limit for general traffic
+    vehicleNightMaxSpeed=6,
+    truckMinSpeed=7,
+    truckMaxSpeed=8,
+    truckNightMaxSpeed=9,
+    vehiclesWithTrailersMinSpeed=10,
+    vehiclesWithTrailersMaxSpeed=11,
+    vehiclesWithTrailersNightMaxSpeed=12
+}

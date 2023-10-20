@@ -1,0 +1,32 @@
+namespace MECData;
+
+table DF_IntersectionStatusObject {
+                                                              //manualControllsEnabled = 0,                               
+                                                              //Timing reported is per programmed values, etc. but person at cabinet can manually request that certain intervals are terminated early(e.g. green).
+                                                              //stopTimelsActivated = 1,                                  
+                                                              //And all counting/timing has stopped.
+                                                              //failureFlash = 2,                                         
+                                                              //Above to be used for any detected hardware failures ,e.g. conflict monitor as well as for police flash
+                                                              //preernptisActive = 3,
+                                                              //signalPrioritylsActive = 4,                               
+                                                              //Additional states
+                                                              //fixedTimeOperation = 5,                                   
+                                                              //Schedule of signals is based on time only (i.e. the state can be calculated)
+                                                              //trafficOependentOperation = 6,                            
+                                                              //Operation is based on different levels of traff ic parameters,(requests, duration of gaps or more complex parameters)
+                                                              //standbyOperation = 7,                                     
+                                                              //Controller: partially switched off or partially amber flashing
+                                                              //failureMode = 8,                                          
+                                                              //Controller has a problem or failure in operation
+                                                              //off = 9,                                                  
+                                                              //Controller is switched off Related to MAP and SPAT bindings
+                                                              //recentMAPmessageUpdate= 10,                               
+                                                              //Map revision with content changes
+                                                              //recentChangelnMAPassignedLanesIDsUsed= 11,                
+                                                              //Change in MAP's assigned lanes used(lane changes),Changes in the active lane list description
+                                                              //noValidMAPisAvailableAtThisTime = 12,                     
+                                                              //MAP(and various lanes indexes)not available
+                                                              //noValidSPATisAvailableAtThisTime = 13	                  
+                                                              //SPAT system is not working at this time Bits 14,15 reserved at t his time and shall be zero
+    status:short;
+}

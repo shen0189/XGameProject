@@ -1,0 +1,24 @@
+include "VertOffsetB07.fbs";
+include "VertOffsetB08.fbs";
+include "VertOffsetB09.fbs";
+include "VertOffsetB10.fbs";
+include "VertOffsetB11.fbs";
+include "VertOffsetB12.fbs";
+
+namespace MECData;
+
+table DF_Elevation {
+    ele:short;                                          //Elevation,units of 10 cm steps above or below the reference elli psoid,Provid ing a range of - 409.5 to + 6143.9 meters,The value -4 096 shall be used when Unknown is to be sent
+}
+
+union DF_VerticalOffset {
+                                                            //Vertical Offset
+                                                            //All below in steps of 10 cm above or below the reference ellipsoid
+    DF_VertOffsetB07,                                          //VertOffsetB07,with a range of +- 6.3 meters ve rtical
+    DF_VertOffsetB08,                                          //VertOffsetB08,LSB units of of 10 cm,with a range of +- 12. 7 meters vertical
+    DF_VertOffsetB09,                                          //VertOffsetB09,LSB units of of 10 cm,with a range of +- 25.5 meters vertical
+    DF_VertOffsetB10,                                          //VertOffsetB10,LSB units of of 10 cm,with a range of +- 51.1 meters vertical
+    DF_VertOffsetB11,                                          //VertOffsetB11,LSB units of of 10 cm,with a range of +- 102.3 meters vertical
+    DF_VertOffsetB12,                                          //VertOffsetB12,LSB units of of 10 cm,with a range of +- 204.7 meters vertical
+    DF_Elevation                                               //Elevation,LSB units of of 10 cm,with a range of -409.5 to + 6143.9 meters
+}

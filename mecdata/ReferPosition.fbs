@@ -1,0 +1,8 @@
+namespace MECData;
+
+table DF_ReferPosition{
+                                                  //refer to device's coordinate system
+    deviceId:uint16;
+    positionX:short;                              //Units of 0.01m, radar normal direction as x-axis
+    positionY:short;                              //Units of 0.01m, vertical radar normal left direction as y-axis
+}

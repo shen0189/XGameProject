@@ -1,0 +1,8 @@
+namespace MECData;
+
+enum DF_TractionControlStatus:byte{
+    unavailable=0,                                  //B'00 Not Equipped with traction control,or traction control status is unavailable
+    off=1,                                          //B'01 traction control is Off        
+    on=2,                                        //B'10 traction control is On (but not Engaged)
+    engaged=3                                     //B'11 traction control is Engaged
+}

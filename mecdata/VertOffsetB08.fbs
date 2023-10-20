@@ -1,0 +1,7 @@
+namespace MECData;
+
+table DF_VertOffsetB08 {
+                                                     // LSB units of of 10 cm 
+                                                     // with a range of +- 12. 7 meters vertical
+    vert:byte;
+}

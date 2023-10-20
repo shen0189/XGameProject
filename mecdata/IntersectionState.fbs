@@ -1,0 +1,16 @@
+include "NodeReferenceID.fbs";
+include "IntersectionStatusObject.fbs";
+include "Phase.fbs";
+include "TimeConfidence.fbs";
+
+namespace MECData;
+
+table DF_IntersectionState {
+    intersectionId:DF_NodeReferenceID(required);                //A globally unique value set, consisting of a regionID and intersection ID assignment provides a unique mapping to the MAP Node
+    status:DF_IntersectionStatusObject(required);               //general status of t he controller(s)
+    moy:uint;                                                   //Minute of current UTC year used only with messages to be archive.cl,the value 527040 shall be used for invalid 
+    timeStamp:ushort;                                           //units of milliseconds,the mSec point in the current UTC minute that this message was constructed
+    timeConfidence:DF_TimeConfidence;
+    phases:[DF_Phase](required);                                //Each Movement is given in turn and contains its signal phase state,mapping to the lanes it applies to, 
+                                                                //and point in time it will end, and it may contain both active and future states
+}

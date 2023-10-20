@@ -1,0 +1,24 @@
+
+namespace MECData;
+
+enum DF_LightState:byte {
+                                                              //Note that based on the regions and the operating mode not every phase will be used in all transportation modes and that not every phase will be used in all transportation modes
+    unavailable = 0,                                          //This state is used for unknown or error
+    dark = 1,                                                 //The signal head is dark (unlit), Reds
+    stopThenProceed = 2,                                      //'flashing red'
+                                                              //Driver Action:Stop vehicle at stop line.Do not proceed unless it is safe.Note that the right to proceed either right or left when it is safe may be contained in the lane description to handle what is called a'right on red'
+    stopAndRemain = 3,                                        //'red light'
+                                                              //Driver Action:Stop vehicle at stop line.Do not proceed.Note that the right to proceed either right or left when it is safe may be contained in the lane description to handle what is called a'right on red'
+                                                              //Greens
+    preMovement = 4,                                          //Not used in the US, red+yellow partly in EU, VMS partly in China
+                                                              //Driver Action:Stop vehicle.Prepare to proceed (pending green)(Prepare for transition to green/ go)
+    permissiveMovementAllowed = 5,                            //perm1ss1ve green
+                                                              //Driver Action:Proceed with caution,must yield to all conflicting traffic.Conflicting traffic may be present in the intersection conflict area
+    protectedMovementAllowed = 6,                             //'protected green'
+                                                              //Driver Action : Proceed, tossing caution to the wind, in indicated (allowed)direction. 
+                                                              //Yellows/Ambers 
+                                                              //The vehicle is not allowed to cross the stop bar if it is possible to stop without danger.
+    intersectionClearance = 7,                                //'yellow light' 
+                                                              //Driver Action: Prepare to stop. Proceed if unable to stop, in indicated direction (to connected lane) Clear Intersection. 
+    cautionConflictingTraffic = 8                             //'flashing yellow'.Often used for extended periods of time.Driver Action: -Proceed with caution, Conflicting traffic may be present in the intersection conflict area
+}
