@@ -1,7 +1,6 @@
 from typing import List, Dict
 import math
 
-
 VEHICLE_LENGTH = 6
 MIN_CYCLE = 60
 MAX_CYCLE = 120
@@ -14,10 +13,10 @@ class Stage:
 
         self.id = stage_id
 
-        #该stage下所有的movement
-        self.movements: List['Movement'] = movements  #define as: [movement1, movement2, ...]
+        # 该stage下所有的movement
+        self.movements: List['Movement'] = movements  # define as: [movement1, movement2, ...]
 
-        #该stgae下，信号灯参数
+        # 该stgae下，信号灯参数
         self.phases: List[int] = phases
         # self.green_start: float = green_start
         self.green_duration: float = green_duration
@@ -50,12 +49,12 @@ class Lane:
         # self.lane_id: str = lane_id  #(待商议)
         self.id: str = ext_id
 
-        #车道连接属性
-        self.turnable: int = turnable   #车道末端可实施转向 直行=1，左转=2，直左=3，直右=5, 左直右=7
-        #车道交通属性
-        self.capacity: int = capacity       # in veh/h
+        # 车道连接属性
+        self.turnable: int = turnable  # 车道末端可实施转向 直行=1，左转=2，直左=3，直右=5, 左直右=7
+        # 车道交通属性
+        self.capacity: int = capacity  # in veh/h
         self.current_queue: float = 0
-        self.volume: float = 0      # in veh/h
+        self.volume: float = 0  # in veh/h
         self.max_queue_before_green: float = 0
         self.max_queue_after_green: float = 0
 
@@ -70,10 +69,10 @@ class Movement:
     def __init__(self, mov_id: int, lanes: List[Lane], turning: int):
         self.id: int = mov_id
 
-        #该movement所对应的stage和上游车道
+        # 该movement所对应的stage和上游车道
         self.stage = None
         self.lanes: List[Lane] = lanes
-        self.turning: int = turning  #车道实施转向 直行=1，左转=2，直左=3，直右=5, 左直右=7
+        self.turning: int = turning  # 车道实施转向 直行=1，左转=2，直左=3，直右=5, 左直右=7
 
         self.pressure: float = 0
         self.saturation: float = 0
@@ -110,10 +109,6 @@ class Movement:
         saturation = self.get_volume() / self.get_capacity()
         self.saturation = saturation
         return saturation
-
-
-
-
 
 
 class Intersection:
@@ -212,7 +207,7 @@ class Intersection:
             else:
                 stage.green_duration = green_duration
         if not feasible:
-            # 重新分配绿灯
+            # 若绿灯时长不满足最小绿灯要求则重新分配绿灯
             usable_green = self.cycle - loss - len(self.stages) * self.min_green_duration
             for weight, stage in zip(weights, self.stages):
                 additional_green_duration = int(usable_green * weight / weight_total)
@@ -258,14 +253,3 @@ class Intersection:
         signal_plan = {'node_id': {'region': 1, 'id': 920}, 'time_span': {}, 'control_mode': 0,
                        'cycle': self.cycle, 'base_signal_scheme_id': 0, 'phases': stage_plan}
         return signal_plan
-
-
-
-
-
-
-
-
-
-
-

@@ -47,7 +47,7 @@ def on_message(client, user_data, msg: MQTTMessage, target_topic: dict, trigger:
             raise RuntimeError('Converting Flatbuffers to JSON failed')
         ret_json_val = ret_json_val.strip(str(bytes(1), encoding='utf-8'))
         ret_json = json.loads(ret_json_val)
-        print(ret_json)
+        # print(ret_json)
         # 提取TrafficFlow信息
         traffic_flow = TrafficFlow(ret_json)
         intersection.read_traffic_flow(traffic_flow_data=traffic_flow.get_stats_details())
@@ -58,7 +58,7 @@ def on_message(client, user_data, msg: MQTTMessage, target_topic: dict, trigger:
             raise RuntimeError('Converting Flatbuffers to JSON failed')
         ret_json_val = ret_json_val.strip(str(bytes(1), encoding='utf-8'))
         ret_json = json.loads(ret_json_val)
-        print(ret_json)
+        # print(ret_json)
         # 提取SPAT信息
         spat = SPAT(ret_json)
         intersection.read_spat(spat_data=spat.get_stats_details())
