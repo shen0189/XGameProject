@@ -3,6 +3,8 @@ from paho.mqtt.client import Client, MQTTMessage
 from connection.python_fbconv.fbconv import FBConverter
 from functools import partial
 from typing import List, Dict, Tuple, Union, Iterable
+from connection.dataclasses import TrafficFlow, SPAT, Trigger
+from algorithm.mapInfo import intersection
 
 
 # MEC_ID = '1'
@@ -35,7 +37,7 @@ def on_connect(client, user_data, flags, rc):
         raise ConnectionError(f'Fail to connect MQTT Broker, error code: {rc}')
 
 
-def on_message(client, user_data, msg: MQTTMessage, target_topic: dict):
+def on_message(client, user_data, msg: MQTTMessage, target_topic: dict, trigger: Trigger):
     """
     接收到订阅主题消息的回调函数，算法的入口
     """
@@ -46,13 +48,10 @@ def on_message(client, user_data, msg: MQTTMessage, target_topic: dict):
         ret_json_val = ret_json_val.strip(str(bytes(1), encoding='utf-8'))
         ret_json = json.loads(ret_json_val)
         print(ret_json)
-    elif msg.topic == 'MECCloud/1/RSM':
-        ret_val, ret_json_val = fb_converter.fb2json(0x1c, msg.payload)
-        if ret_val != 0:
-            raise RuntimeError('Converting Flatbuffers to JSON failed')
-        ret_json_val = ret_json_val.strip(str(bytes(1), encoding='utf-8'))
-        ret_json = json.loads(ret_json_val)
-        # print(ret_json)
+        # 提取TrafficFlow信息
+        traffic_flow = TrafficFlow(ret_json)
+        intersection.read_traffic_flow(traffic_flow_data=traffic_flow.get_stats_details())
+
     elif msg.topic == 'MECCloud/1/SPAT':
         ret_val, ret_json_val = fb_converter.fb2json(0x18, msg.payload)
         if ret_val != 0:
@@ -60,8 +59,18 @@ def on_message(client, user_data, msg: MQTTMessage, target_topic: dict):
         ret_json_val = ret_json_val.strip(str(bytes(1), encoding='utf-8'))
         ret_json = json.loads(ret_json_val)
         print(ret_json)
+        # 提取SPAT信息
+        spat = SPAT(ret_json)
+        intersection.read_spat(spat_data=spat.get_stats_details())
+        # 根据触发器提取信息
+        timing_plan = trigger.execute(ret_json)
+        if timing_plan:
+            err_code, bytes_msg = fb_converter.json2fb(0x24, json.dumps(timing_plan.encode()))
+            client.publish('MECUpload/1/SignalScheme', bytes_msg)
 
-def connect(topics: Union[str, Iterable[str]]):
+
+
+def connect(topics: Union[str, Iterable[str]], trigger: Trigger):
     """
     通过MQTT协议与Broker连接，阻塞形式
     """
@@ -79,7 +88,7 @@ def connect(topics: Union[str, Iterable[str]]):
     }
     client = Client()
     client.on_connect = on_connect
-    client.on_message = partial(on_message, target_topic=target_topic_dict)
+    client.on_message = partial(on_message, target_topic=target_topic_dict, trigger=trigger)
 
     broker = '121.36.231.253'  # '10.51.50.186'
     port = 1883
@@ -92,10 +101,15 @@ def connect(topics: Union[str, Iterable[str]]):
 
 if __name__ == '__main__':
 
+    first_stage = [1, 9]
+    last_stage = [6, 7, 14, 15]
+    trigger = Trigger(first_stage, last_stage)
+
+
     topics = ['MECCloud/1/TrafficFlow', 'MECCloud/1/SPAT']
     # cloud_topic = ['TrafficFlow']
     # topic = create_topic(MEC_ID, cloud_topic, False)  # 构建订阅主题
 
     fb_converter = FBConverter(102400)  # Flatbuffers转换成json
 
-    connect(topics=topics)
+    connect(topics=topics, trigger=trigger)
