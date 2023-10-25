@@ -55,8 +55,12 @@ class SPAT:
 class Trigger:
 
     # 初始化第一个状态
-    def __init__(self, first_stage: list = ['2', '10', '3', '7', '11', '15'],
-                 last_stage: list = ['5', '13', '3', '7', '11', '15']):
+    def __init__(self, first_stage=None, last_stage=None):
+
+        if first_stage is None:
+            first_stage = ['2', '10', '3', '7', '11', '15']
+        if last_stage is None:
+            last_stage = ['5', '13', '3', '7', '11', '15']
 
         # 当前使用的信号配时方案及其状态
         # used用于表征当前方案是否被执行过，last用于表示当前方案是否进入最后一个stage，setting就是信号配时的msg
@@ -115,32 +119,10 @@ class Trigger:
             if self.light_to_set["send"]:
                 intersection.solve()
                 msg = intersection.output_signal_plan()
-                # msg = {'node_id': {'region': 1, 'id': 920}, 'time_span': {}, 'control_mode': 0, 'cycle': 90,
-                #        'base_signal_scheme_id': 0, 'phases': [
-                #         {'id': 1, 'order': 1, 'movements': ['1', '2', '3'], 'green': 20, 'yellow': 6, 'allred': 0},
-                #         {'id': 2, 'order': 2, 'movements': ['5', '6', '7'], 'green': 20, 'yellow': 6, 'allred': 0},
-                #         {'id': 3, 'order': 3, 'movements': ['9', '10', '11'], 'green': 20, 'yellow': 6, 'allred': 0},
-                #         {'id': 4, 'order': 4, 'movements': ['13', '14', '15'], 'green': 20, 'yellow': 6, 'allred': 0}]}
                 self.light_to_set = {'send': False, 'setting': msg}
                 return msg
 
         return None
-
-    # # 传输消息改变配方案
-    # def signal_setting(self):
-    #
-    #     fb_converter = FBConverter(102400)
-    #
-    #     if not self.light_to_set["send"]:
-    #         err_code, bytes_msg = fb_converter.json2fb(0x24, json.dumps(self.light_to_set["setting"]).encode())
-    #         # msg = {'details': {'next_phasic_id': 2, 'effective_time': 10}, 'details_type': 'DF_SignalRequestByPhase'}
-    #         # err_code, bytes_msg = fb_converter.json2fb(0x31, json.dumps(msg).encode())
-    #         client = Client()
-    #         client.connect('121.36.231.253', 1883)
-    #         client.publish('MECUpload/1/SignalScheme', bytes_msg)
-    #
-    #         self.light_to_set["send"] = True
-    #         self.light_setting = {'used': False, 'last': False, 'setting': self.light_to_set["setting"]}
 
     # 整体运行
     def execute(self, SPAT_msg, intersection):
@@ -152,5 +134,3 @@ class Trigger:
             self.light_to_set["send"] = True
             self.light_setting = {'used': False, 'last': False, 'setting': self.light_to_set["setting"]}
         return msg
-        # self.signal_setting()
-        # print(SPAT_parse["phaseNow"].keys())
