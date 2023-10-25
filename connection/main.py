@@ -63,11 +63,11 @@ def on_message(client, user_data, msg: MQTTMessage, target_topic: dict, trigger:
         spat = SPAT(ret_json)
         intersection.read_spat(spat_data=spat.get_stats_details())
         # 根据触发器提取信息
-        timing_plan = trigger.execute(ret_json)
+        timing_plan = trigger.execute(ret_json, intersection)
         if timing_plan:
-            err_code, bytes_msg = fb_converter.json2fb(0x24, json.dumps(timing_plan.encode()))
+            err_code, bytes_msg = fb_converter.json2fb(0x24, json.dumps(timing_plan).encode())
             client.publish('MECUpload/1/SignalScheme', bytes_msg)
-
+            print('Publish new signal plan')
 
 
 def connect(topics: Union[str, Iterable[str]], trigger: Trigger):
@@ -101,8 +101,8 @@ def connect(topics: Union[str, Iterable[str]], trigger: Trigger):
 
 if __name__ == '__main__':
 
-    first_stage = [1, 9]
-    last_stage = [6, 7, 14, 15]
+    first_stage = [2, 10]
+    last_stage = [5, 13]
     trigger = Trigger(first_stage, last_stage)
 
 
