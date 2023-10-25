@@ -55,7 +55,9 @@ class SPAT:
 class Trigger:
 
     # 初始化第一个状态
-    def __init__(self, first_stage: list, last_stage: list):
+    def __init__(self, first_stage: list = ['2', '10', '3', '7', '11', '15'],
+                 last_stage: list = ['5', '13', '3', '7', '11', '15']):
+
         # 当前使用的信号配时方案及其状态
         # used用于表征当前方案是否被执行过，last用于表示当前方案是否进入最后一个stage，setting就是信号配时的msg
         self.light_setting = {'used': False, 'last': False,
@@ -89,25 +91,27 @@ class Trigger:
 
         if self.light_setting["used"]:
             last_stage = self.light_setting["setting"]["phases"][-1]
-            phaseNow = []
-            stateNow = []
+            phaseNow = ['3', '7', '11', '15']
             for phaseId in SPAT_parse["phaseNow"].keys():
-                phaseNow.append(int(phaseId.split(' ')[0]))
-                stateNow.append(phaseId.split(' ')[1])
-            if phaseNow == last_stage["movements"]:
+                phaseNow.append(phaseId.split(' ')[0])
+            print(phaseNow)
+            print(last_stage["movements"])
+            if set(phaseNow) == set(last_stage["movements"]):
                 self.light_setting["last"] = True
+                print('move into the last stage')
                 return True
             else:
                 return False
         else:
             first_stage = self.light_setting["setting"]["phases"][0]
-            phaseNow = []
-            stateNow = []
+            phaseNow = ['3', '7', '11', '15']
             for phaseId in SPAT_parse["phaseNow"].keys():
-                phaseNow.append(int(phaseId.split(' ')[0]))
-                stateNow.append(phaseId.split(' ')[1])
-            if phaseNow == first_stage["movements"]:
+                phaseNow.append(phaseId.split(' ')[0])
+            print(phaseNow)
+            print(first_stage["movements"])
+            if set(phaseNow) == set(first_stage["movements"]):
                 self.light_setting["used"] = True
+                print('move into the first stage')
             return False
 
     # 后续和算法文件进行连接 用于计算下一个周期的配时方案
@@ -115,6 +119,7 @@ class Trigger:
 
         if self.light_setting['last']:
             if self.light_to_set["send"]:
+                print('begin to solve')
                 intersection.solve()
                 msg = intersection.output_signal_plan()
                 # msg = {'node_id': {'region': 1, 'id': 920}, 'time_span': {}, 'control_mode': 0, 'cycle': 90,
@@ -123,7 +128,7 @@ class Trigger:
                 #         {'id': 2, 'order': 2, 'movements': ['5', '6', '7'], 'green': 20, 'yellow': 6, 'allred': 0},
                 #         {'id': 3, 'order': 3, 'movements': ['9', '10', '11'], 'green': 20, 'yellow': 6, 'allred': 0},
                 #         {'id': 4, 'order': 4, 'movements': ['13', '14', '15'], 'green': 20, 'yellow': 6, 'allred': 0}]}
-                # self.light_to_set = {'send': False, 'setting': msg}
+                self.light_to_set = {'send': False, 'setting': msg}
                 return msg
 
         return None
@@ -150,6 +155,9 @@ class Trigger:
         SPAT_parse = self.SPAT_msg_parse(SPAT_msg)
         self.detect(SPAT_parse)
         msg = self.msg_solve(intersection)
+        if msg:
+            self.light_to_set["send"] = True
+            self.light_setting = {'used': False, 'last': False, 'setting': self.light_to_set["setting"]}
         return msg
         # self.signal_setting()
         # print(SPAT_parse["phaseNow"].keys())
