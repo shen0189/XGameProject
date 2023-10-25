@@ -101,10 +101,7 @@ def connect(topics: Union[str, Iterable[str]], trigger: Trigger):
 
 if __name__ == '__main__':
 
-    first_stage = [2, 10]
-    last_stage = [5, 13]
-    trigger = Trigger(first_stage, last_stage)
-
+    trigger = Trigger()
 
     topics = ['MECCloud/1/TrafficFlow', 'MECCloud/1/SPAT']
     # cloud_topic = ['TrafficFlow']
