@@ -1,0 +1,11 @@
+absl-py==0.15.0
+annotated-types==0.5.0
+certifi==2023.7.22
+ortools==9.1.9490
+paho-mqtt==1.6.1
+protobuf==3.19.1
+pydantic==2.4.0
+pydantic_core==2.10.0
+pyproj==3.5.0
+PyYAML==6.0.1
+typing_extensions==4.8.0
