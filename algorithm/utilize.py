@@ -165,7 +165,7 @@ class Intersection:
             phase_id, remaining_red = phase_timing['phase_id'], phase_timing['remaining_red']
             for stage in self.stages:
                 if int(phase_id) in stage.phases:
-                    stage.remaining_red = remaining_red
+                    stage.set_remaining_red(remaining_red)
                     if remaining_red == 0:
                         current_stage = stage.id
         for stage in self.stages:
