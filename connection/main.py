@@ -3,7 +3,7 @@ from paho.mqtt.client import Client, MQTTMessage
 from connection.python_fbconv.fbconv import FBConverter
 from functools import partial
 from typing import List, Dict, Tuple, Union, Iterable
-from connection.dataclasses import TrafficFlow, SPAT, Trigger
+from connection.msg_handler import TrafficFlow, SPAT, Trigger
 from algorithm.mapInfo import intersection
 
 
@@ -75,7 +75,7 @@ def connect(topics: Union[str, Iterable[str]], trigger: Trigger):
 
 
 if __name__ == '__main__':
-    
+
     trigger = Trigger()
 
     topics = ['MECCloud/1/TrafficFlow', 'MECCloud/1/SPAT']
