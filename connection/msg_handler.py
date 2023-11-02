@@ -9,6 +9,8 @@ class TrafficFlow:
         return self.data.get('stats', [])
 
     def get_stats_details(self):
+
+        interval = self.data['stat_type']['interval']
         stats_list = self.get_stats()
         details = []
 
@@ -23,6 +25,7 @@ class TrafficFlow:
                 'ext_id': ext_id,
                 'volume': volume,
                 'queue_length': queue_length,
+                'interval': interval,
                 # 'queue_length_meters': queue_length_meters,
                 # 'queue_length_vehicles': queue_length_vehicles
             })
