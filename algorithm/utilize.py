@@ -2,7 +2,7 @@ from typing import List, Dict
 import math
 
 VEHICLE_LENGTH = 6
-MIN_CYCLE = 60
+MIN_CYCLE = 115
 MAX_CYCLE = 120
 MIN_GREEN = 10
 
@@ -56,11 +56,25 @@ class Lane:
         self.capacity: int = capacity  # in veh/h
         self.current_queue: float = 0
         self.volume: float = 0  # in veh/h
+        self.volume_list: list = []
+        self.volume_duration_list: list = []
         self.max_queue_before_green: float = 0
         self.max_queue_after_green: float = 0
 
     def set_volume(self, volume: int):
         self.volume = volume * 0.01
+
+    def update_volume(self, volume, duration):
+        if sum(self.volume_duration_list) + duration > 300:
+            self.volume_duration_list.pop(0)
+            self.volume_list.pop(0)
+        self.volume_duration_list.append(duration)
+        self.volume_list.append(volume * 0.01)
+        if sum(self.volume_duration_list) > 0:
+            self.volume = sum(v * i for v, i in zip(self.volume_list, self.volume_duration_list)) / sum(
+                self.volume_duration_list)
+        else:
+            self.set_volume(volume)
 
     def set_queue(self, queue):
         self.current_queue = queue * 0.1 / VEHICLE_LENGTH
@@ -121,7 +135,7 @@ class Intersection:
         self.cycle: int = 0
         self.yellow_duration = yellow
         self.allred_duration = allred
-        self.factor: float = 1
+        self.factor: float = 0.01
 
         self.min_cycle = MIN_CYCLE
         self.max_cycle = MAX_CYCLE
@@ -134,7 +148,8 @@ class Intersection:
         for stat in traffic_flow_data:
             ext_id = stat['ext_id']
             lane = self.lanes[ext_id]
-            lane.set_volume(stat['volume'])
+            # lane.set_volume(stat['volume'])
+            lane.update_volume(volume=stat['volume'], duration=stat['interval'])
             lane.set_queue(stat['queue_length'])
         self.update_max_queue()
         self.update_movement_state()
