@@ -24,7 +24,6 @@ class Stage:
         self.allred: float = allred
 
         self.remaining_red: float = 0
-        self.has_shown: bool = False
         self.saturation: float = 0
         self.pressure: float = 0
 
@@ -34,7 +33,9 @@ class Stage:
     def update_saturation(self):
         saturation = 0
         for movement in self.movements:
-            saturation += movement.saturation
+            if movement.saturation > saturation:
+                saturation = movement.saturation
+        print(f'The saturation of Stage {self.id} is {saturation}')
         self.saturation = saturation
 
     def update_pressure(self):
@@ -126,6 +127,8 @@ class Intersection:
         self.max_cycle = MAX_CYCLE
         self.min_green_duration = MIN_GREEN
 
+        self.executed_stage = []
+
     def read_traffic_flow(self, traffic_flow_data: list):
         # print('Extract traffic flow info')
         for stat in traffic_flow_data:
@@ -147,7 +150,7 @@ class Intersection:
                 for lane in movement.lanes:
                     volume, current_queue = lane.volume, lane.current_queue
                     max_queue = current_queue + volume * stage_remain_red / 3600
-                    if stage.has_shown is False:
+                    if stage.id not in self.executed_stage:
                         lane.max_queue_before_green = max(lane.max_queue_before_green, max_queue)
                     else:
                         lane.max_queue_after_green = max(lane.max_queue_after_green, max_queue)
@@ -168,9 +171,10 @@ class Intersection:
                     stage.set_remaining_red(remaining_red)
                     if remaining_red == 0:
                         current_stage = stage.id
-        for stage in self.stages:
-            if stage.id <= current_stage:
-                stage.has_shown = True
+        # 考虑到黄灯 有可能所有stage的remaining_red都不是0
+        if current_stage > 0:
+            if current_stage not in self.executed_stage:
+                self.executed_stage.append(current_stage)
 
     def solve(self):
 
@@ -198,9 +202,10 @@ class Intersection:
             weights.append(weight)
         weight_total = sum(weights)
 
+        effective_green = self.cycle - loss
         feasible = True
         for weight, stage in zip(weights, self.stages):
-            green_duration = int(self.cycle * weight / weight_total)
+            green_duration = int(effective_green * weight / weight_total)
             if green_duration < self.min_green_duration:
                 feasible = False
                 break
@@ -208,9 +213,9 @@ class Intersection:
                 stage.green_duration = green_duration
         if not feasible:
             # 若绿灯时长不满足最小绿灯要求则重新分配绿灯
-            usable_green = self.cycle - loss - len(self.stages) * self.min_green_duration
+            usable_effective_green = self.cycle - loss - len(self.stages) * self.min_green_duration
             for weight, stage in zip(weights, self.stages):
-                additional_green_duration = int(usable_green * weight / weight_total)
+                additional_green_duration = int(usable_effective_green * weight / weight_total)
                 stage.green_duration = self.min_green_duration + additional_green_duration
 
         # 检查是否由于取整操作导致各相位之和不等于周期
@@ -231,10 +236,9 @@ class Intersection:
 
     def reset(self):
         '''
-        每次一个周期开始时重置关键参数
+        每次执行算法重置关键参数
         '''
-        for stage in self.stages:
-            stage.has_shown = False
+        self.executed_stage = []
         for lane in self.lanes.values():
             lane.max_queue_before_green = 0
             lane.max_queue_after_green = 0
