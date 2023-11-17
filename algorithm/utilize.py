@@ -1,10 +1,11 @@
 from typing import List, Dict
 import math
 
-VEHICLE_LENGTH = 6
-MIN_CYCLE = 115
+VEHICLE_LENGTH = 7.5
+MIN_CYCLE = 60
 MAX_CYCLE = 120
 MIN_GREEN = 10
+FACTOR = 0.05
 
 
 class Stage:
@@ -135,7 +136,7 @@ class Intersection:
         self.cycle: int = 0
         self.yellow_duration = yellow
         self.allred_duration = allred
-        self.factor: float = 0.01
+        self.factor: float = FACTOR
 
         self.min_cycle = MIN_CYCLE
         self.max_cycle = MAX_CYCLE
@@ -204,7 +205,7 @@ class Intersection:
         if webster_y >= 1:
             cycle = self.max_cycle
         else:
-            cycle = int(loss / (1 - webster_y))
+            cycle = int((1.5 * loss + 5) / (1 - webster_y))
             if cycle < self.min_cycle:
                 cycle = self.min_cycle
             elif cycle > self.max_cycle:
@@ -262,7 +263,11 @@ class Intersection:
         stage_plan = []
         for stage in self.stages:
             stage_id = stage.id
-            movements = [str(phase) for phase in stage.phases] + ['3', '7', '11', '15']
+            movements = [str(phase) for phase in stage.phases]
+            if stage_id == 1:
+                movements.extend(['3', '11'])
+            elif stage_id == 3:
+                movements.extend(['7', '15'])
             green = stage.green_duration
             yellow = stage.yellow_duration
             allred = stage.allred
