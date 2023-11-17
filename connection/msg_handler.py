@@ -61,9 +61,9 @@ class Trigger:
     def __init__(self, first_stage=None, last_stage=None):
 
         if first_stage is None:
-            first_stage = ['2', '10', '3', '7', '11', '15']
+            first_stage = ['2', '10']
         if last_stage is None:
-            last_stage = ['5', '13', '3', '7', '11', '15']
+            last_stage = ['5', '13']
 
         # 当前使用的信号配时方案及其状态
         # used用于表征当前方案是否被执行过，last用于表示当前方案是否进入最后一个stage，setting就是信号配时的msg
@@ -98,20 +98,22 @@ class Trigger:
 
         if self.light_setting["used"]:
             last_stage = self.light_setting["setting"]["phases"][-1]
-            phaseNow = ['3', '7', '11', '15']
+            phaseNow = []
             for phaseId in SPAT_parse["phaseNow"].keys():
                 phaseNow.append(phaseId.split(' ')[0])
-            if set(phaseNow) == set(last_stage["movements"]):
+            # if set(phaseNow) == set(last_stage["movements"]):
+            if set(phaseNow).issubset(set(last_stage['movements'])) and len(phaseNow) > 0:  # 排除黄灯时段影响
                 self.light_setting["last"] = True
                 return True
             else:
                 return False
         else:
             first_stage = self.light_setting["setting"]["phases"][0]
-            phaseNow = ['3', '7', '11', '15']
+            phaseNow = []
             for phaseId in SPAT_parse["phaseNow"].keys():
                 phaseNow.append(phaseId.split(' ')[0])
-            if set(phaseNow) == set(first_stage["movements"]):
+            # if set(phaseNow) == set(first_stage["movements"]):
+            if set(phaseNow).issubset(set(first_stage['movements'])) and len(phaseNow) > 0:  # 排除黄灯时段影响
                 self.light_setting["used"] = True
             return False
 
